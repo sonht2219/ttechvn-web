@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'revicons';
+  src: url('../fonts/revicons/revicons.eot?5510888');
+  src: url('../fonts/revicons/revicons.eot?5510888#iefix') format('embedded-opentype'),
+  url('../fonts/revicons/revicons.woff?5510888') format('woff'),
+  url('../fonts/revicons/revicons.ttf?5510888') format('truetype'),
+  url('../fonts/revicons/revicons.svg?5510888#revicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.slick-main {
+  height: calc(100vh - 60px);
+}
+
+.slick-initialized .slick-list,
+.slick-initialized .slick-track,
+.slick-initialized .slick-slide div,
+.slick-initialized .slick-slide div div {
+  height: 100%;
+}
+
+.slick-prev, .slick-next {
+  cursor: pointer;
+  background: #000;
+  background: rgba(0,0,0,0.5);
+  width: 30px;
+  height: 110px;
+  position: absolute;
+  display: block;
+  z-index: 1000;
+}
+
+.slick-prev {
+  right: 100%;
+  left: 0;
+  top: 50%;
+  transform: matrix(1, 0, 0, 1, 0, -60);
+}
+
+.slick-next {
+  left: 100%;
+  right: 0;
+  top: 50%;
+  transform: matrix(1, 0, 0, 1, -30, -60)
+}
+
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+  color: transparent;
+  outline: none;
+  background: #000;
+  background: rgba(0,0,0,0.5);
+}
+
+.slick-prev:before {
+  content: '\e824';
+}
+
+.slick-next:before {
+  content: '\e825';
+}
+
+.slick-prev:before, .slick-next:before {
+  font-family: 'revicons', sans-serif !important;
+}
+
+.slick-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
