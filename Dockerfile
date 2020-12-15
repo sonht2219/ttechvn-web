@@ -7,8 +7,8 @@ FROM node:14
 ARG WORKDIR=/var/www/html
 WORKDIR $WORKDIR
 ## Install app dependencies
-#COPY package.json /usr/src/app/
-#COPY yarn.lock /usr/src/app/
+COPY package.json $WORKDIR
+COPY package-lock.json $WORKDIR
 #RUN yarn install
 
 RUN npm install
@@ -18,7 +18,7 @@ RUN npm install
 #ENV NUXT_PORT 3000
 
 # Bundle app source
-#COPY . /usr/src/app
+COPY . $WORKDIR
 RUN npm run build
 
 # Clear the cache
