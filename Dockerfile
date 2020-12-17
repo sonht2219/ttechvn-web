@@ -24,5 +24,5 @@ RUN npm run build
 # Clear the cache
 #RUN yarn cache clean
 
-EXPOSE 3000
+#EXPOSE 3000
 ENTRYPOINT [ "npm", "start" ]
