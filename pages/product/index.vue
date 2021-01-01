@@ -1,26 +1,10 @@
 <template>
   <div>
     <!-- inner page banner -->
-    <div
-      class="dlab-bnr-inr overlay-black-middle"
-      style="background-image: url(/images/background/bg4.jpg)"
-    >
-      <div class="container">
-        <div class="dlab-bnr-inr-entry">
-          <h1 class="text-white">Product Details</h1>
-        </div>
-      </div>
-    </div>
+    <inner-banner v-bind="{ title: 'Sản phẩm' }" />
     <!-- inner page banner END -->
     <!-- Breadcrumb row -->
-    <div class="breadcrumb-row">
-      <div class="container">
-        <ul class="list-inline">
-          <li><a href="#">Home</a></li>
-          <li>Product Details</li>
-        </ul>
-      </div>
-    </div>
+    <bread-crumb />
     <!-- Breadcrumb row END -->
     <!-- contact area -->
     <div class="section-full content-inner bg-white">
@@ -29,17 +13,36 @@
         <div class="row m-b30">
           <div class="col-lg-5 col-md-5">
             <div class="product-gallery on-show-slider">
-              <div
-                id="sync1"
-                class="owl-carousel owl-theme owl-btn-center-lr m-b5 owl-btn-1 primary"
+              <VueSlickCarousel
+                ref="sync1"
+                :as-nav-for="$refs.sync2"
+                :focus-on-select="true"
+                v-bind="
+                  vueSlickMultipleSlideSetting(false, true, false, 1, 1, 1, 1)
+                "
+                class="m-b5"
               >
+                <template #prevArrow>
+                  <div class="product-custom-arrow-prev">
+                    <i class="fa fa-chevron-left"></i>
+                  </div>
+                </template>
+                <template #nextArrow>
+                  <div class="product-custom-arrow-next">
+                    <i class="fa fa-chevron-right"></i>
+                  </div>
+                </template>
                 <div class="item">
                   <div class="mfp-gallery">
                     <div class="dlab-box">
                       <div class="dlab-thum-bx dlab-img-overlay1">
-                        <img src="/images/product/item1.jpg" alt="" />
+                        <img
+                          src="/images/product/item1.jpg"
+                          alt=""
+                          class="w-100"
+                        />
                         <div class="overlay-bx">
-                          <div class="overlay-icon">
+                          <div class="overlay-icon overlay-icon-custom">
                             <a
                               class="mfp-link"
                               title="Product Name"
@@ -57,12 +60,16 @@
                   <div class="mfp-gallery">
                     <div class="dlab-box">
                       <div class="dlab-thum-bx dlab-img-overlay1">
-                        <img src="/images/product/item2.jpg" alt="" />
+                        <img
+                          src="/images/product/item2.jpg"
+                          alt=""
+                          class="w-100"
+                        />
                         <div class="overlay-bx">
-                          <div class="overlay-icon">
+                          <div class="overlay-icon overlay-icon-custom">
                             <a
                               class="mfp-link"
-                              title="Product Name"
+                              title="Product Name2"
                               href="/images/product/item2.jpg"
                             >
                               <i class="ti-fullscreen"></i>
@@ -77,12 +84,16 @@
                   <div class="mfp-gallery">
                     <div class="dlab-box">
                       <div class="dlab-thum-bx dlab-img-overlay1">
-                        <img src="/images/product/item3.jpg" alt="" />
+                        <img
+                          src="/images/product/item3.jpg"
+                          alt=""
+                          class="w-100"
+                        />
                         <div class="overlay-bx">
-                          <div class="overlay-icon">
+                          <div class="overlay-icon overlay-icon-custom">
                             <a
                               class="mfp-link"
-                              title="Product Name"
+                              title="Product Name3"
                               href="/images/product/item3.jpg"
                             >
                               <i class="ti-fullscreen"></i>
@@ -97,12 +108,16 @@
                   <div class="mfp-gallery">
                     <div class="dlab-box">
                       <div class="dlab-thum-bx dlab-img-overlay1">
-                        <img src="/images/product/item4.jpg" alt="" />
+                        <img
+                          src="/images/product/item4.jpg"
+                          alt=""
+                          class="w-100"
+                        />
                         <div class="overlay-bx">
-                          <div class="overlay-icon">
+                          <div class="overlay-icon overlay-icon-custom">
                             <a
                               class="mfp-link"
-                              title="Product Name"
+                              title="Product Name4"
                               href="/images/product/item4.jpg"
                             >
                               <i class="ti-fullscreen"></i>
@@ -117,12 +132,16 @@
                   <div class="mfp-gallery">
                     <div class="dlab-box">
                       <div class="dlab-thum-bx dlab-img-overlay1">
-                        <img src="/images/product/item5.jpg" alt="" />
+                        <img
+                          src="/images/product/item5.jpg"
+                          alt=""
+                          class="w-100"
+                        />
                         <div class="overlay-bx">
-                          <div class="overlay-icon">
+                          <div class="overlay-icon overlay-icon-custom">
                             <a
                               class="mfp-link"
-                              title="Product Name"
+                              title="Product Name5"
                               href="/images/product/item5.jpg"
                             >
                               <i class="ti-fullscreen"></i>
@@ -133,35 +152,50 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </VueSlickCarousel>
 
-              <div id="sync2" class="owl-carousel owl-theme owl-none">
+              <VueSlickCarousel
+                ref="sync2"
+                :as-nav-for="$refs.sync1"
+                :focus-on-select="true"
+                v-bind="
+                  vueSlickMultipleSlideSetting(
+                    false,
+                    false,
+                    false,
+                    show,
+                    3,
+                    3,
+                    3
+                  )
+                "
+              >
                 <div class="item">
-                  <div class="dlab-media">
+                  <div class="dlab-media dlab-media-custom">
                     <img src="/images/product/thumb/item1.jpg" alt="" />
                   </div>
                 </div>
                 <div class="item">
-                  <div class="dlab-media">
+                  <div class="dlab-media dlab-media-custom">
                     <img src="/images/product/thumb/item2.jpg" alt="" />
                   </div>
                 </div>
                 <div class="item">
-                  <div class="dlab-media">
+                  <div class="dlab-media dlab-media-custom">
                     <img src="/images/product/thumb/item3.jpg" alt="" />
                   </div>
                 </div>
                 <div class="item">
-                  <div class="dlab-media">
+                  <div class="dlab-media dlab-media-custom">
                     <img src="/images/product/thumb/item4.jpg" alt="" />
                   </div>
                 </div>
                 <div class="item">
-                  <div class="dlab-media">
+                  <div class="dlab-media dlab-media-custom">
                     <img src="/images/product/thumb/item5.jpg" alt="" />
                   </div>
                 </div>
-              </div>
+              </VueSlickCarousel>
             </div>
           </div>
           <div class="col-lg-7 col-md-7">
@@ -182,83 +216,21 @@
                   </div>
                 </div>
                 <div class="relative">
-                  <h3 class="m-tb10">$2,140.00</h3>
+                  <h3 class="m-tb10">Giá: Liên hệ</h3>
                   <div class="shop-item-rating">
                     <span class="rating-bx">
                       <i class="fa fa-star"></i>
                       <i class="fa fa-star"></i>
                       <i class="fa fa-star"></i>
-                      <i class="fa fa-star-o"></i>
-                      <i class="fa fa-star-o"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
                     </span>
-                    <span>4.5 Rating</span>
+                    <span>5 Rating</span>
                   </div>
-                </div>
-                <div class="shop-item-tage">
-                  <span>Tags :- </span>
-                  <a href="">Shoes,</a>
-                  <a href="">Clothing</a>
-                  <a href="">T-shirts</a>
-                </div>
-                <div class="dlab-divider bg-gray tb15">
-                  <i class="icon-dot c-square"></i>
                 </div>
                 <div class="row">
                   <div class="m-b30 col-lg-6 col-md-6 col-sm-6">
-                    <h6>Product Size</h6>
-                    <div
-                      class="btn-group product-item-size"
-                      data-toggle="buttons"
-                    >
-                      <label class="btn active">
-                        <input
-                          id="option1"
-                          type="radio"
-                          name="options"
-                          autocomplete="off"
-                          checked
-                        />XS
-                      </label>
-                      <label class="btn">
-                        <input
-                          id="option2"
-                          type="radio"
-                          name="options"
-                          autocomplete="off"
-                        />
-                        LG
-                      </label>
-                      <label class="btn">
-                        <input
-                          id="option3"
-                          type="radio"
-                          name="options"
-                          autocomplete="off"
-                        />
-                        MD
-                      </label>
-                      <label class="btn">
-                        <input
-                          id="option4"
-                          type="radio"
-                          name="options"
-                          autocomplete="off"
-                        />
-                        SM
-                      </label>
-                      <label class="btn">
-                        <input
-                          id="option5"
-                          type="radio"
-                          name="options"
-                          autocomplete="off"
-                        />
-                        Xl
-                      </label>
-                    </div>
-                  </div>
-                  <div class="m-b30 col-lg-6 col-md-6 col-sm-6">
-                    <h6>Select quantity</h6>
+                    <h6>Số lượng</h6>
                     <div class="quantity btn-quantity style-1">
                       <input
                         id="demo_vertical2"
@@ -269,59 +241,19 @@
                     </div>
                   </div>
                 </div>
-                <div class="m-b30">
-                  <h6>Select the color</h6>
-                  <div
-                    class="btn-group product-item-color"
-                    data-toggle="buttons"
-                  >
-                    <label class="btn bg-red active">
-                      <input
-                        id="option1"
-                        type="radio"
-                        name="options"
-                        autocomplete="off"
-                        checked
-                      />
-                    </label>
-                    <label class="btn bg-pink">
-                      <input
-                        id="option2"
-                        type="radio"
-                        name="options"
-                        autocomplete="off"
-                      />
-                    </label>
-                    <label class="btn bg-yellow">
-                      <input
-                        id="option3"
-                        type="radio"
-                        name="options"
-                        autocomplete="off"
-                      />
-                    </label>
-                    <label class="btn bg-blue">
-                      <input
-                        id="option4"
-                        type="radio"
-                        name="options"
-                        autocomplete="off"
-                      />
-                    </label>
-                    <label class="btn bg-green">
-                      <input
-                        id="option5"
-                        type="radio"
-                        name="options"
-                        autocomplete="off"
-                      />
-                    </label>
-                  </div>
-                </div>
                 <button class="site-button radius-no">
                   <i class="ti-shopping-cart"></i> Add To Cart
                 </button>
               </form>
+              <div class="row m-t30 product-service">
+                <div
+                  v-for="(service, i) in productServices"
+                  :key="i"
+                  class="col-lg-4 col-md-4 col-sm-12 m-b30"
+                >
+                  <product-service v-bind="service" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -337,23 +269,23 @@
                     class="nav-link active"
                     href="#web-design-1"
                   >
-                    <i class="fa fa-globe"></i> Description</a
+                    <i class="fa fa-globe"></i> Chi tiết sản phẩm</a
                   >
                 </li>
-                <li class="nav-item">
-                  <a
-                    data-toggle="tab"
-                    class="nav-link"
-                    href="#graphic-design-1"
-                  >
-                    <i class="fa fa-photo"></i> Additional Information</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a data-toggle="tab" class="nav-link" href="#developement-1">
-                    <i class="fa fa-cog"></i> Product Review</a
-                  >
-                </li>
+                <!--                <li class="nav-item">-->
+                <!--                  <a-->
+                <!--                    data-toggle="tab"-->
+                <!--                    class="nav-link"-->
+                <!--                    href="#graphic-design-1"-->
+                <!--                  >-->
+                <!--                    <i class="fa fa-photo"></i> Additional Information</a-->
+                <!--                  >-->
+                <!--                </li>-->
+                <!--                <li class="nav-item">-->
+                <!--                  <a data-toggle="tab" class="nav-link" href="#developement-1">-->
+                <!--                    <i class="fa fa-cog"></i> Product Review</a-->
+                <!--                  >-->
+                <!--                </li>-->
               </ul>
               <div class="tab-content">
                 <div id="web-design-1" class="tab-pane active">
@@ -705,217 +637,73 @@
         </div>
         <div class="row">
           <div class="col-lg-12">
-            <h5 class="m-b20">Related Products</h5>
-            <div
-              class="img-carousel-content owl-carousel owl-btn-center-lr owl-btn-1 primary"
+            <h5 class="m-b20">Sản phẩm khác</h5>
+            <VueSlickCarousel
+              v-bind="
+                vueSlickMultipleSlideSetting(false, true, false, 3, 3, 2, 1)
+              "
             >
-              <div class="item">
-                <div class="item-box">
-                  <div class="item-img">
-                    <img src="/images/product/item1.jpg" alt="" />
-                    <div class="item-info-in">
-                      <ul>
-                        <li>
-                          <a href="#"><i class="ti-shopping-cart"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-eye"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-heart"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="item-info text-center text-black p-a10">
-                    <h6 class="item-title text-uppercase font-weight-500">
-                      <a href="#">Product Title</a>
-                    </h6>
-                    <ul class="item-review">
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star-half-o"></i></li>
-                      <li><i class="fa fa-star-o"></i></li>
-                    </ul>
-                    <h4 class="item-price">
-                      <del>$232</del> <span class="text-primary">$192</span>
-                    </h4>
-                  </div>
+              <template #prevArrow>
+                <div class="product-custom-arrow-prev">
+                  <i class="fa fa-chevron-left"></i>
                 </div>
-              </div>
-              <div class="item">
-                <div class="item-box">
-                  <div class="item-img">
-                    <img src="/images/product/item2.jpg" alt="" />
-                    <div class="item-info-in">
-                      <ul>
-                        <li>
-                          <a href="#"><i class="ti-shopping-cart"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-eye"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-heart"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="item-info text-center text-black p-a10">
-                    <h6 class="item-title text-uppercase font-weight-500">
-                      <a href="#">Product Title</a>
-                    </h6>
-                    <ul class="item-review">
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star-half-o"></i></li>
-                      <li><i class="fa fa-star-o"></i></li>
-                    </ul>
-                    <h4 class="item-price">
-                      <del>$232</del> <span class="text-primary">$192</span>
-                    </h4>
-                  </div>
+              </template>
+              <template #nextArrow>
+                <div class="product-custom-arrow-next">
+                  <i class="fa fa-chevron-right"></i>
                 </div>
-              </div>
-              <div class="item">
-                <div class="item-box">
-                  <div class="item-img">
-                    <img src="/images/product/item3.jpg" alt="" />
-                    <div class="item-info-in">
-                      <ul>
-                        <li>
-                          <a href="#"><i class="ti-shopping-cart"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-eye"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-heart"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="item-info text-center text-black p-a10">
-                    <h6 class="item-title text-uppercase font-weight-500">
-                      <a href="#">Product Title</a>
-                    </h6>
-                    <ul class="item-review">
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star-half-o"></i></li>
-                      <li><i class="fa fa-star-o"></i></li>
-                    </ul>
-                    <h4 class="item-price">
-                      <del>$232</del> <span class="text-primary">$192</span>
-                    </h4>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="item-box">
-                  <div class="item-img">
-                    <img src="/images/product/item4.jpg" alt="" />
-                    <div class="item-info-in">
-                      <ul>
-                        <li>
-                          <a href="#"><i class="ti-shopping-cart"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-eye"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="ti-heart"></i></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="item-info text-center text-black p-a10">
-                    <h6 class="item-title text-uppercase font-weight-500">
-                      <a href="#">Product Title</a>
-                    </h6>
-                    <ul class="item-review">
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star-half-o"></i></li>
-                      <li><i class="fa fa-star-o"></i></li>
-                    </ul>
-                    <h4 class="item-price">
-                      <del>$232</del> <span class="text-primary">$192</span>
-                    </h4>
-                  </div>
-                </div>
-              </div>
-            </div>
+              </template>
+              <product-item-large
+                v-bind="{
+                  name: 'Product Title',
+                  image: '/images/product/item1.jpg',
+                }"
+              />
+              <product-item-large
+                v-bind="{
+                  name: 'Product Title',
+                  image: '/images/product/item1.jpg',
+                }"
+              />
+              <product-item-large
+                v-bind="{
+                  name: 'Product Title',
+                  image: '/images/product/item1.jpg',
+                }"
+              />
+              <product-item-large
+                v-bind="{
+                  name: 'Product Title',
+                  image: '/images/product/item1.jpg',
+                }"
+              />
+            </VueSlickCarousel>
           </div>
         </div>
       </div>
       <!-- Product details -->
     </div>
     <!-- contact area  END -->
-    <div class="section-full p-t50 p-b20 bg-gray">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-lg-4">
-            <div class="icon-bx-wraper left m-b30">
-              <div class="icon-md text-black radius">
-                <a href="#" class="icon-cell text-black"
-                  ><i class="fa fa-gift"></i
-                ></a>
-              </div>
-              <div class="icon-content">
-                <h5 class="dlab-tilte">Free shipping on orders $60+</h5>
-                <p>
-                  Order more than 60$ and you will get free shippining
-                  Worldwide. More info.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="icon-bx-wraper left m-b30">
-              <div class="icon-md text-black radius">
-                <a href="#" class="icon-cell text-black"
-                  ><i class="fa fa-plane"></i
-                ></a>
-              </div>
-              <div class="icon-content">
-                <h5 class="dlab-tilte">Worldwide delivery</h5>
-                <p>
-                  We deliver to the following countries: USA, Canada, Europe,
-                  Australia
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4">
-            <div class="icon-bx-wraper left m-b30">
-              <div class="icon-md text-black radius">
-                <a href="#" class="icon-cell text-black"
-                  ><i class="fa fa-history"></i
-                ></a>
-              </div>
-              <div class="icon-content">
-                <h5 class="dlab-tilte">60 days money back guranty!</h5>
-                <p>
-                  Not happy with our product, feel free to return it, we will
-                  refund 100% your money!
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
+import { CommonMixin } from '@/shared/mixins/CommonMixin'
+import InnerBanner from '@/components/shared/innerbanner/index'
+import BreadCrumb from '@/components/shared/breadcrumb/index'
+import ProductItemLarge from '@/components/shared/productitemlg/index'
+import ProductService from '@/components/shared/productservice/index'
+
 export default {
   name: 'Product',
+  components: { ProductService, ProductItemLarge, BreadCrumb, InnerBanner },
+  mixins: [CommonMixin],
+  data: () => ({
+    show: 1,
+  }),
+  mounted() {
+    this.show = 4
+  },
 }
 </script>
 

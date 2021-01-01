@@ -58,10 +58,10 @@
                     <span class="icon-cell"><i class="ti-home"></i></span>
                   </div>
                   <div class="icon-content">
-                    <h3 class="dlab-tilte text-uppercase m-b10">Meet & Ask</h3>
+                    <h3 class="dlab-tilte text-uppercase m-b10">T-TECH</h3>
                     <p>
-                      Lorem Ipsum is simply dummy text the printing and industry
-                      dummy Ipsum
+                      T-Tech luôn là người bạn đồng hành đáng tin cậy của khách
+                      hàng
                     </p>
                   </div>
                 </div>
@@ -71,10 +71,10 @@
                   href="contact.html"
                   class="site-button-secondry button-skew m-l10"
                 >
-                  <span>Contact Us</span><i class="fa fa-angle-right"></i
+                  <span>Liên hệ</span><i class="fa fa-angle-right"></i
                 ></a>
                 <a href="#" class="site-button-secondry button-skew m-l20">
-                  <span>View more</span><i class="fa fa-angle-right"></i
+                  <span>Giới thiệu</span><i class="fa fa-angle-right"></i
                 ></a>
               </div>
             </div>
@@ -90,20 +90,20 @@
           <div class="col-lg-7 about-contant">
             <div class="m-b20">
               <h2 class="text-uppercase m-t0 m-b10">
-                Car<span class="text-primary"> Polish</span>
+                Về<span class="text-primary"> Chúng tôi</span>
               </h2>
-              <span class="text-secondry font-16">Innovation & Adoption</span>
+              <span class="text-secondry font-16">Sứ mệnh Tiên phong</span>
               <div class="clear"></div>
             </div>
             <p class="m-b30">
-              There are many variations of passages of Lorem Ipsum typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing..
+              Công ty T-Tech là một trong những đơn vị đã sản xuất, sửa chữa xe
+              chữa cháy với chất lượng và uy tín cao, được các khách hàng ghi
+              nhận. Với khả năng làm chủ hoàn toàn các công nghệ mới nên sản
+              phẩm được thiết kế và sản xuất phù hợp, ổn định, thân thiện, hiểu
+              quả với người sử dụng. Cùng với tỷ lệ nội địa hóa cao, giá thành
+              cạnh tranh, dịch vụ bảo trì, bảo dưỡng trọn đời. sẽ là sự lựa chọn
+              phù hợp, hiệu quả cho quý khách hàng. Để được phục vụ xin hãy liên
+              hệ với chúng tôi
             </p>
             <div class="row">
               <div class="col-md-4 col-lg-4 col-sm-4 m-b15">
@@ -115,7 +115,7 @@
                     <h2 class="text-primary m-t20 m-b10">
                       <span class="counter">1800</span>+
                     </h2>
-                    <p>Engineers & Workers</p>
+                    <p>Kỹ sư</p>
                   </div>
                 </div>
               </div>
@@ -126,9 +126,9 @@
                   </div>
                   <div class="icon-content">
                     <h2 class="text-primary m-t20 m-b10">
-                      <span class="counter">620</span>+
+                      <span class="counter">2</span>+
                     </h2>
-                    <p>Factory In Worldwide</p>
+                    <p>Nhà máy</p>
                   </div>
                 </div>
               </div>
@@ -143,7 +143,7 @@
                     <h2 class="text-primary m-t20 m-b10">
                       <span class="counter">1527</span>+
                     </h2>
-                    <p>Projects Completed</p>
+                    <p>Dự án</p>
                   </div>
                 </div>
               </div>
@@ -158,7 +158,7 @@
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the.
             </p>
-            <a href="#" class="site-button">Read More</a>
+            <a href="#" class="site-button">Xem thêm</a>
           </div>
           <div class="col-lg-5 about-img">
             <img src="images/img2.jpg" alt="" />
@@ -168,203 +168,327 @@
     </div>
     <!-- About Company END -->
     <!-- Our Projects  -->
-    <div class="section-full bg-img-fix content-inner overlay-black-middle">
+    <!--    <div class="section-full bg-img-fix content-inner overlay-black-middle">-->
+    <!--      <div class="container">-->
+    <!--        <div class="section-head text-center text-white">-->
+    <!--          <h2 class="text-uppercase">Our Projects</h2>-->
+    <!--          <div class="dlab-separator-outer">-->
+    <!--            <div class="dlab-separator bg-white style-skew"></div>-->
+    <!--          </div>-->
+    <!--          <p>-->
+    <!--            There are many variations of passages of Lorem Ipsum typesetting-->
+    <!--            industry has been the industry's standard dummy text ever since the-->
+    <!--            been when an unknown printer.-->
+    <!--          </p>-->
+    <!--        </div>-->
+    <!--        <div class="site-filters clearfix center m-b40">-->
+    <!--          <ul class="filters" data-toggle="buttons">-->
+    <!--            <li data-filter="" class="btn active">-->
+    <!--              <input type="radio" />-->
+    <!--              <a href="#" class="site-button-secondry"><span>Show All</span></a>-->
+    <!--            </li>-->
+    <!--            <li data-filter="home" class="btn">-->
+    <!--              <input type="radio" />-->
+    <!--              <a href="#" class="site-button-secondry"><span>Brakes</span></a>-->
+    <!--            </li>-->
+    <!--            <li data-filter="office" class="btn">-->
+    <!--              <input type="radio" />-->
+    <!--              <a href="#" class="site-button-secondry"-->
+    <!--                ><span>Suspension</span></a-->
+    <!--              >-->
+    <!--            </li>-->
+    <!--            <li data-filter="commercial" class="btn">-->
+    <!--              <input type="radio" />-->
+    <!--              <a href="#" class="site-button-secondry"><span>Wheels</span></a>-->
+    <!--            </li>-->
+    <!--            <li data-filter="window" class="btn">-->
+    <!--              <input type="radio" />-->
+    <!--              <a href="#" class="site-button-secondry"-->
+    <!--                ><span>Steering </span></a-->
+    <!--              >-->
+    <!--            </li>-->
+    <!--          </ul>-->
+    <!--        </div>-->
+    <!--        <ul-->
+    <!--          id="masonry"-->
+    <!--          class="row dlab-gallery-listing gallery-grid-4 lightgallery gallery s m-b0"-->
+    <!--        >-->
+    <!--          <li class="home card-container col-lg-4 col-md-4 col-sm-6 col-6">-->
+    <!--            <div class="dlab-box dlab-gallery-box">-->
+    <!--              <div-->
+    <!--                class="dlab-media dlab-img-overlay1 dlab-img-effect zoom-slow"-->
+    <!--              >-->
+    <!--                <a href="javascript:void(0);">-->
+    <!--                  <img src="images/our-work/pic1.jpg" alt="" />-->
+    <!--                </a>-->
+    <!--                <div class="overlay-bx">-->
+    <!--                  <div class="overlay-icon">-->
+    <!--                    <a href="javascript:void(0);">-->
+    <!--                      <i class="fa fa-link icon-bx-xs"></i>-->
+    <!--                    </a>-->
+    <!--                    <span-->
+    <!--                      data-exthumbimage="images/our-work/thum/pic1.jpg"-->
+    <!--                      data-src="images/our-work/pic1.jpg"-->
+    <!--                      class="fa fa-picture-o icon-bx-xs check-km"-->
+    <!--                      title="Light Gallery Grid 1"-->
+    <!--                    ></span>-->
+    <!--                  </div>-->
+    <!--                </div>-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--          </li>-->
+    <!--          <li class="office card-container col-lg-4 col-md-4 col-sm-6 col-6">-->
+    <!--            <div class="dlab-box dlab-gallery-box">-->
+    <!--              <div-->
+    <!--                class="dlab-media dlab-img-overlay1 dlab-img-effect zoom-slow dlab-img-effect zoom"-->
+    <!--              >-->
+    <!--                <a href="javascript:void(0);">-->
+    <!--                  <img src="images/our-work/pic2.jpg" alt="" />-->
+    <!--                </a>-->
+    <!--                <div class="overlay-bx">-->
+    <!--                  <div class="overlay-icon">-->
+    <!--                    <a href="javascript:void(0);">-->
+    <!--                      <i class="fa fa-link icon-bx-xs"></i>-->
+    <!--                    </a>-->
+    <!--                    <span-->
+    <!--                      data-exthumbimage="images/our-work/thum/pic2.jpg"-->
+    <!--                      data-src="images/our-work/pic2.jpg"-->
+    <!--                      class="fa fa-picture-o icon-bx-xs check-km"-->
+    <!--                      title="Light Gallery Grid 1"-->
+    <!--                    ></span>-->
+    <!--                  </div>-->
+    <!--                </div>-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--          </li>-->
+    <!--          <li-->
+    <!--            class="card-container col-lg-4 col-md-4 col-sm-6 col-6 commercial"-->
+    <!--          >-->
+    <!--            <div class="dlab-box dlab-gallery-box">-->
+    <!--              <div-->
+    <!--                class="dlab-media dlab-img-overlay1 dlab-img-effect zoom-slow"-->
+    <!--              >-->
+    <!--                <a href="javascript:void(0);">-->
+    <!--                  <img src="images/our-work/pic3.jpg" alt="" />-->
+    <!--                </a>-->
+    <!--                <div class="overlay-bx">-->
+    <!--                  <div class="overlay-icon">-->
+    <!--                    <a href="javascript:void(0);">-->
+    <!--                      <i class="fa fa-link icon-bx-xs"></i>-->
+    <!--                    </a>-->
+    <!--                    <span-->
+    <!--                      data-exthumbimage="images/our-work/thum/pic3.jpg"-->
+    <!--                      data-src="images/our-work/pic3.jpg"-->
+    <!--                      class="fa fa-picture-o icon-bx-xs check-km"-->
+    <!--                      title="Light Gallery Grid 1"-->
+    <!--                    ></span>-->
+    <!--                  </div>-->
+    <!--                </div>-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--          </li>-->
+    <!--          <li-->
+    <!--            class="commercial card-container col-lg-4 col-md-4 col-sm-6 col-6"-->
+    <!--          >-->
+    <!--            <div class="dlab-box dlab-gallery-box">-->
+    <!--              <div-->
+    <!--                class="dlab-media dlab-img-overlay1 dlab-img-effect zoom-slow"-->
+    <!--              >-->
+    <!--                <a href="javascript:void(0);">-->
+    <!--                  <img src="images/our-work/pic4.jpg" alt="" />-->
+    <!--                </a>-->
+    <!--                <div class="overlay-bx">-->
+    <!--                  <div class="overlay-icon">-->
+    <!--                    <a href="javascript:void(0);">-->
+    <!--                      <i class="fa fa-link icon-bx-xs"></i>-->
+    <!--                    </a>-->
+    <!--                    <span-->
+    <!--                      data-exthumbimage="images/our-work/thum/pic4.jpg"-->
+    <!--                      data-src="images/our-work/pic4.jpg"-->
+    <!--                      class="fa fa-picture-o icon-bx-xs check-km"-->
+    <!--                      title="Light Gallery Grid 1"-->
+    <!--                    ></span>-->
+    <!--                  </div>-->
+    <!--                </div>-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--          </li>-->
+    <!--          <li class="window card-container col-lg-4 col-md-4 col-sm-6 col-6">-->
+    <!--            <div class="dlab-box dlab-gallery-box">-->
+    <!--              <div-->
+    <!--                class="dlab-media dlab-img-overlay1 dlab-img-effect zoom-slow"-->
+    <!--              >-->
+    <!--                <a href="javascript:void(0);">-->
+    <!--                  <img src="images/our-work/pic5.jpg" alt="" />-->
+    <!--                </a>-->
+    <!--                <div class="overlay-bx">-->
+    <!--                  <div class="overlay-icon">-->
+    <!--                    <a href="javascript:void(0);">-->
+    <!--                      <i class="fa fa-link icon-bx-xs"></i>-->
+    <!--                    </a>-->
+    <!--                    <span-->
+    <!--                      data-exthumbimage="images/our-work/thum/pic5.jpg"-->
+    <!--                      data-src="images/our-work/pic5.jpg"-->
+    <!--                      class="fa fa-picture-o icon-bx-xs check-km"-->
+    <!--                      title="Light Gallery Grid 1"-->
+    <!--                    ></span>-->
+    <!--                  </div>-->
+    <!--                </div>-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--          </li>-->
+    <!--          <li class="window card-container col-lg-4 col-md-4 col-sm-6 col-6">-->
+    <!--            <div class="dlab-box dlab-gallery-box">-->
+    <!--              <div-->
+    <!--                class="dlab-media dlab-img-overlay1 dlab-img-effect zoom-slow"-->
+    <!--              >-->
+    <!--                <a href="javascript:void(0);">-->
+    <!--                  <img src="images/our-work/pic6.jpg" alt="" />-->
+    <!--                </a>-->
+    <!--                <div class="overlay-bx">-->
+    <!--                  <div class="overlay-icon">-->
+    <!--                    <a href="javascript:void(0);">-->
+    <!--                      <i class="fa fa-link icon-bx-xs"></i>-->
+    <!--                    </a>-->
+    <!--                    <span-->
+    <!--                      data-exthumbimage="images/our-work/thum/pic6.jpg"-->
+    <!--                      data-src="images/our-work/pic6.jpg"-->
+    <!--                      class="fa fa-picture-o icon-bx-xs check-km"-->
+    <!--                      title="Light Gallery Grid 1"-->
+    <!--                    ></span>-->
+    <!--                  </div>-->
+    <!--                </div>-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--          </li>-->
+    <!--        </ul>-->
+    <!--      </div>-->
+    <!--    </div>-->
+    <!-- Our Projects END -->
+
+    <!-- Company staus -->
+    <div
+      class="section-full text-white bg-img-fix content-inner overlay-black-middle"
+      style="background-image: url(images/background/bg4-img.jpg)"
+    >
       <div class="container">
-        <div class="section-head text-center text-white">
-          <h2 class="text-uppercase">Our Projects</h2>
-          <div class="dlab-separator-outer">
-            <div class="dlab-separator bg-white style-skew"></div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="dex-box text-primary border-2 counter-box m-b30">
+              <h2 class="text-uppercase m-a0 p-a15">
+                <i class="fa fa-group m-r20"></i>
+                <span class="counter">1226</span>
+              </h2>
+              <h5 class="dlab-tilte text-uppercase m-a0">
+                <span
+                  class="dlab-tilte-inner skew-title bg-primary p-lr15 p-tb10"
+                  >Khách hàng</span
+                >
+              </h5>
+            </div>
           </div>
-          <p>
-            There are many variations of passages of Lorem Ipsum typesetting
-            industry has been the industry's standard dummy text ever since the
-            been when an unknown printer.
-          </p>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="dex-box text-primary border-2 counter-box m-b30">
+              <h2 class="text-uppercase m-a0 p-a15">
+                <i class="ti-home m-r20"></i>
+                <span class="counter">1035</span>
+              </h2>
+              <h5 class="dlab-tilte text-uppercase m-a0">
+                <span
+                  class="dlab-tilte-inner skew-title bg-primary p-lr15 p-tb10"
+                  >Kho mẫu</span
+                >
+              </h5>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="dex-box text-primary border-2 counter-box m-b30">
+              <h2 class="text-uppercase m-a0 p-a15">
+                <i class="fa fa-slideshare m-r20"></i>
+                <span class="counter">1552</span>
+              </h2>
+              <h5 class="dlab-tilte text-uppercase m-a0">
+                <span
+                  class="dlab-tilte-inner skew-title bg-primary p-lr15 p-tb10"
+                  >Nhân sự</span
+                >
+              </h5>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="dex-box text-primary border-2 counter-box m-b10">
+              <h2 class="text-uppercase m-a0 p-a15">
+                <i class="fa fa-home m-r20"></i>
+                <span class="counter">1156</span>
+              </h2>
+              <h5 class="dlab-tilte text-uppercase m-a0">
+                <span
+                  class="dlab-tilte-inner skew-title bg-primary p-lr15 p-tb10"
+                  >Kinh nghiệm</span
+                >
+              </h5>
+            </div>
+          </div>
         </div>
-        <div class="site-filters clearfix center m-b40">
-          <ul class="filters" data-toggle="buttons">
-            <li data-filter="" class="btn active">
-              <input type="radio" />
-              <a href="#" class="site-button-secondry"><span>Show All</span></a>
-            </li>
-            <li data-filter="home" class="btn">
-              <input type="radio" />
-              <a href="#" class="site-button-secondry"><span>Brakes</span></a>
-            </li>
-            <li data-filter="office" class="btn">
-              <input type="radio" />
-              <a href="#" class="site-button-secondry"
-                ><span>Suspension</span></a
-              >
-            </li>
-            <li data-filter="commercial" class="btn">
-              <input type="radio" />
-              <a href="#" class="site-button-secondry"><span>Wheels</span></a>
-            </li>
-            <li data-filter="window" class="btn">
-              <input type="radio" />
-              <a href="#" class="site-button-secondry"
-                ><span>Steering </span></a
-              >
-            </li>
-          </ul>
-        </div>
-        <ul
-          id="masonry"
-          class="row dlab-gallery-listing gallery-grid-4 lightgallery gallery s m-b0"
-        >
-          <li class="home card-container col-lg-4 col-md-4 col-sm-6 col-6">
-            <div class="dlab-box dlab-gallery-box">
-              <div
-                class="dlab-media dlab-img-overlay1 dlab-img-effect zoom-slow"
-              >
-                <a href="javascript:void(0);">
-                  <img src="images/our-work/pic1.jpg" alt="" />
-                </a>
-                <div class="overlay-bx">
-                  <div class="overlay-icon">
-                    <a href="javascript:void(0);">
-                      <i class="fa fa-link icon-bx-xs"></i>
-                    </a>
-                    <span
-                      data-exthumbimage="images/our-work/thum/pic1.jpg"
-                      data-src="images/our-work/pic1.jpg"
-                      class="fa fa-picture-o icon-bx-xs check-km"
-                      title="Light Gallery Grid 1"
-                    ></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="office card-container col-lg-4 col-md-4 col-sm-6 col-6">
-            <div class="dlab-box dlab-gallery-box">
-              <div
-                class="dlab-media dlab-img-overlay1 dlab-img-effect zoom-slow dlab-img-effect zoom"
-              >
-                <a href="javascript:void(0);">
-                  <img src="images/our-work/pic2.jpg" alt="" />
-                </a>
-                <div class="overlay-bx">
-                  <div class="overlay-icon">
-                    <a href="javascript:void(0);">
-                      <i class="fa fa-link icon-bx-xs"></i>
-                    </a>
-                    <span
-                      data-exthumbimage="images/our-work/thum/pic2.jpg"
-                      data-src="images/our-work/pic2.jpg"
-                      class="fa fa-picture-o icon-bx-xs check-km"
-                      title="Light Gallery Grid 1"
-                    ></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li
-            class="card-container col-lg-4 col-md-4 col-sm-6 col-6 commercial"
-          >
-            <div class="dlab-box dlab-gallery-box">
-              <div
-                class="dlab-media dlab-img-overlay1 dlab-img-effect zoom-slow"
-              >
-                <a href="javascript:void(0);">
-                  <img src="images/our-work/pic3.jpg" alt="" />
-                </a>
-                <div class="overlay-bx">
-                  <div class="overlay-icon">
-                    <a href="javascript:void(0);">
-                      <i class="fa fa-link icon-bx-xs"></i>
-                    </a>
-                    <span
-                      data-exthumbimage="images/our-work/thum/pic3.jpg"
-                      data-src="images/our-work/pic3.jpg"
-                      class="fa fa-picture-o icon-bx-xs check-km"
-                      title="Light Gallery Grid 1"
-                    ></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li
-            class="commercial card-container col-lg-4 col-md-4 col-sm-6 col-6"
-          >
-            <div class="dlab-box dlab-gallery-box">
-              <div
-                class="dlab-media dlab-img-overlay1 dlab-img-effect zoom-slow"
-              >
-                <a href="javascript:void(0);">
-                  <img src="images/our-work/pic4.jpg" alt="" />
-                </a>
-                <div class="overlay-bx">
-                  <div class="overlay-icon">
-                    <a href="javascript:void(0);">
-                      <i class="fa fa-link icon-bx-xs"></i>
-                    </a>
-                    <span
-                      data-exthumbimage="images/our-work/thum/pic4.jpg"
-                      data-src="images/our-work/pic4.jpg"
-                      class="fa fa-picture-o icon-bx-xs check-km"
-                      title="Light Gallery Grid 1"
-                    ></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="window card-container col-lg-4 col-md-4 col-sm-6 col-6">
-            <div class="dlab-box dlab-gallery-box">
-              <div
-                class="dlab-media dlab-img-overlay1 dlab-img-effect zoom-slow"
-              >
-                <a href="javascript:void(0);">
-                  <img src="images/our-work/pic5.jpg" alt="" />
-                </a>
-                <div class="overlay-bx">
-                  <div class="overlay-icon">
-                    <a href="javascript:void(0);">
-                      <i class="fa fa-link icon-bx-xs"></i>
-                    </a>
-                    <span
-                      data-exthumbimage="images/our-work/thum/pic5.jpg"
-                      data-src="images/our-work/pic5.jpg"
-                      class="fa fa-picture-o icon-bx-xs check-km"
-                      title="Light Gallery Grid 1"
-                    ></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="window card-container col-lg-4 col-md-4 col-sm-6 col-6">
-            <div class="dlab-box dlab-gallery-box">
-              <div
-                class="dlab-media dlab-img-overlay1 dlab-img-effect zoom-slow"
-              >
-                <a href="javascript:void(0);">
-                  <img src="images/our-work/pic6.jpg" alt="" />
-                </a>
-                <div class="overlay-bx">
-                  <div class="overlay-icon">
-                    <a href="javascript:void(0);">
-                      <i class="fa fa-link icon-bx-xs"></i>
-                    </a>
-                    <span
-                      data-exthumbimage="images/our-work/thum/pic6.jpg"
-                      data-src="images/our-work/pic6.jpg"
-                      class="fa fa-picture-o icon-bx-xs check-km"
-                      title="Light Gallery Grid 1"
-                    ></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
       </div>
     </div>
-    <!-- Our Projects END -->
+    <!-- Company staus END -->
+    <!-- Product -->
+    <div class="section-full content-inner">
+      <div class="container">
+        <div class="section-head text-center">
+          <h2 class="text-uppercase">Sản phẩm</h2>
+          <div class="dlab-separator-outer">
+            <div class="dlab-separator bg-secondry style-skew"></div>
+          </div>
+        </div>
+        <div class="section-content text-center">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <product-item />
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <product-item />
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <product-item />
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <product-item />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <product-item />
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <product-item />
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <product-item />
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <product-item />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <product-item />
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <product-item />
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <product-item />
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <product-item />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Product END -->
     <!-- OUR SERVICES -->
     <div class="section-full bg-white content-inner">
       <div class="container">
@@ -388,10 +512,11 @@
                 ></span>
               </div>
               <div class="icon-content">
-                <h5 class="dlab-tilte text-uppercase">AIR CONDITIONING</h5>
+                <h5 class="dlab-tilte text-uppercase">Tính sẵn có</h5>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam nonummy nibh euismod
+                  Công ty T-Tech luôn đảm bảo sẵn sàng và kịp thời giao hàng cho
+                  khách hàng từ 4 – 20 tuần kể từ ngày mua hàng, tùy thuộc loại
+                  sản phẩm.
                 </p>
               </div>
             </div>
@@ -404,10 +529,11 @@
                 ></span>
               </div>
               <div class="icon-content">
-                <h5 class="dlab-tilte text-uppercase">BRAKE REPAIR</h5>
+                <h5 class="dlab-tilte text-uppercase">Uy tín hàng đầu</h5>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam nonummy nibh euismod
+                  Có mặt trên thị trường hơn 5 năm qua, Công ty T-Tech là đối
+                  tác chiến lược của các Bộ, Ban ngành và công ty trên khắp 64
+                  tỉnh thành
                 </p>
               </div>
             </div>
@@ -420,10 +546,11 @@
                 ></span>
               </div>
               <div class="icon-content">
-                <h5 class="dlab-tilte text-uppercase">LUBE, OIL AND FILTERS</h5>
+                <h5 class="dlab-tilte text-uppercase">ĐẢM BẢO CHẤT LƯỢNG</h5>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam nonummy nibh euismod
+                  Để đảm bảo chất lượng của các sản phẩm, T-Tech chú trọng từng
+                  bộ phận, chi tiết qua việc sử dụng các linh kiện nhập các nước
+                  G7.
                 </p>
               </div>
             </div>
@@ -436,10 +563,11 @@
                 ></span>
               </div>
               <div class="icon-content">
-                <h5 class="dlab-tilte text-uppercase">BELTS AND HOSES</h5>
+                <h5 class="dlab-tilte text-uppercase">GIÁ CẢ CẠNH TRANH</h5>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam nonummy nibh euismod
+                  Sản phẩm được nhập khẩu và lắp ráp trực tiếp tại T-Tech, vì
+                  vậy khách hàng luôn được hưởng giá cả cạnh tranh giảm thiểu
+                  30-50% giá xe nhập khẩu nguyên chiếc mà chất lượng không đổi.
                 </p>
               </div>
             </div>
@@ -452,10 +580,13 @@
                 ></span>
               </div>
               <div class="icon-content">
-                <h5 class="dlab-tilte text-uppercase">ENGINE DIAGNOSTICS</h5>
+                <h5 class="dlab-tilte text-uppercase">
+                  DỊCH VỤ HẬU MÃI TỐT NHẤT
+                </h5>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam nonummy nibh euismod
+                  Với đội ngũ công nhân, kỹ sư lành nghề và giàu kinh nghiệm,
+                  các sản phẩm sau khi mua của khách hàng sẽ được bảo trì và sửa
+                  chữa hoàn toàn miễn phí.
                 </p>
               </div>
             </div>
@@ -468,12 +599,11 @@
                 ></span>
               </div>
               <div class="icon-content">
-                <h5 class="dlab-tilte text-uppercase">
-                  TIRE AND WHEEL SERVICES
-                </h5>
+                <h5 class="dlab-tilte text-uppercase">TÍNH ĐA DẠNG</h5>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam nonummy nibh euismod
+                  Qua hơn 5 năm nghiên cứu và phát triển, T-Tech có một danh mục
+                  sản phẩm đa dạng, đáp ứng bất kỳ nhu cầu chuyên biệt nào của
+                  khách hàng.
                 </p>
               </div>
             </div>
@@ -482,402 +612,71 @@
       </div>
     </div>
     <!-- OUR SERVICES END-->
-    <!-- Company staus -->
-    <div
-      class="section-full text-white bg-img-fix content-inner overlay-black-middle"
-    >
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="dex-box text-primary border-2 counter-box m-b30">
-              <h2 class="text-uppercase m-a0 p-a15">
-                <i class="ti-home m-r20"></i>
-                <span class="counter">1035</span>
-              </h2>
-              <h5 class="dlab-tilte text-uppercase m-a0">
-                <span
-                  class="dlab-tilte-inner skew-title bg-primary p-lr15 p-tb10"
-                  >Active Experts</span
-                >
-              </h5>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="dex-box text-primary border-2 counter-box m-b30">
-              <h2 class="text-uppercase m-a0 p-a15">
-                <i class="fa fa-group m-r20"></i>
-                <span class="counter">1226</span>
-              </h2>
-              <h5 class="dlab-tilte text-uppercase m-a0">
-                <span
-                  class="dlab-tilte-inner skew-title bg-primary p-lr15 p-tb10"
-                  >Happy Client</span
-                >
-              </h5>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="dex-box text-primary border-2 counter-box m-b30">
-              <h2 class="text-uppercase m-a0 p-a15">
-                <i class="fa fa-slideshare m-r20"></i>
-                <span class="counter">1552</span>
-              </h2>
-              <h5 class="dlab-tilte text-uppercase m-a0">
-                <span
-                  class="dlab-tilte-inner skew-title bg-primary p-lr15 p-tb10"
-                  >Workers Hand</span
-                >
-              </h5>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="dex-box text-primary border-2 counter-box m-b10">
-              <h2 class="text-uppercase m-a0 p-a15">
-                <i class="fa fa-home m-r20"></i>
-                <span class="counter">1156</span>
-              </h2>
-              <h5 class="dlab-tilte text-uppercase m-a0">
-                <span
-                  class="dlab-tilte-inner skew-title bg-primary p-lr15 p-tb10"
-                  >Completed Project</span
-                >
-              </h5>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Company staus END -->
-    <!-- Team member -->
-    <div class="section-full bg-white content-inner">
-      <div class="container">
-        <div class="section-head text-center">
-          <h2 class="text-uppercase">Meet The Team</h2>
-          <div class="dlab-separator-outer">
-            <div class="dlab-separator bg-secondry style-skew"></div>
-          </div>
-          <p>
-            There are many variations of passages of Lorem Ipsum typesetting
-            industry has been the industry's standard dummy text ever since the
-            been when an unknown printer.
-          </p>
-        </div>
-        <div class="section-content text-center">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="dlab-box m-b30">
-                <div class="dlab-media">
-                  <a href="javascript:;">
-                    <img
-                      width="358"
-                      height="460"
-                      alt=""
-                      src="images/our-team/pic1.jpg"
-                    />
-                  </a>
-                  <div class="dlab-info-has skew-has bg-primary">
-                    <ul class="dlab-social-icon dez-border">
-                      <li>
-                        <a
-                          class="fa fa-facebook"
-                          href="javascript:void(0);"
-                        ></a>
-                      </li>
-                      <li>
-                        <a class="fa fa-twitter" href="javascript:void(0);"></a>
-                      </li>
-                      <li>
-                        <a
-                          class="fa fa-linkedin"
-                          href="javascript:void(0);"
-                        ></a>
-                      </li>
-                      <li>
-                        <a
-                          class="fa fa-facebook"
-                          href="javascript:void(0);"
-                        ></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="p-a10">
-                  <h4 class="dlab-title text-uppercase m-b5">
-                    <a href="javascript:;">Nashid Martines</a>
-                  </h4>
-                  <span class="dlab-member-position">Director</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="dlab-box m-b30">
-                <div class="dlab-media">
-                  <a href="javascript:;">
-                    <img
-                      width="358"
-                      height="460"
-                      alt=""
-                      src="images/our-team/pic2.jpg"
-                    />
-                  </a>
-                  <div class="dlab-info-has skew-has bg-primary">
-                    <ul class="dlab-social-icon dez-border">
-                      <li>
-                        <a
-                          class="fa fa-facebook"
-                          href="javascript:void(0);"
-                        ></a>
-                      </li>
-                      <li>
-                        <a class="fa fa-twitter" href="javascript:void(0);"></a>
-                      </li>
-                      <li>
-                        <a
-                          class="fa fa-linkedin"
-                          href="javascript:void(0);"
-                        ></a>
-                      </li>
-                      <li>
-                        <a
-                          class="fa fa-facebook"
-                          href="javascript:void(0);"
-                        ></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="p-a10 bg-white">
-                  <h4 class="dlab-title text-uppercase m-b5">
-                    <a href="javascript:;">konne Backfield</a>
-                  </h4>
-                  <span class="dlab-member-position">Designer</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="dlab-box m-b30">
-                <div class="dlab-media">
-                  <a href="javascript:;">
-                    <img
-                      width="358"
-                      height="460"
-                      alt=""
-                      src="images/our-team/pic3.jpg"
-                    />
-                  </a>
-                  <div class="dlab-info-has skew-has bg-primary">
-                    <ul class="dlab-social-icon dez-border">
-                      <li>
-                        <a
-                          class="fa fa-facebook"
-                          href="javascript:void(0);"
-                        ></a>
-                      </li>
-                      <li>
-                        <a class="fa fa-twitter" href="javascript:void(0);"></a>
-                      </li>
-                      <li>
-                        <a
-                          class="fa fa-linkedin"
-                          href="javascript:void(0);"
-                        ></a>
-                      </li>
-                      <li>
-                        <a
-                          class="fa fa-facebook"
-                          href="javascript:void(0);"
-                        ></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="p-a10">
-                  <h4 class="dlab-title text-uppercase m-b5">
-                    <a href="javascript:;">Hackson Willingham</a>
-                  </h4>
-                  <span class="dlab-member-position">Developer</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="dlab-box m-b10">
-                <div class="dlab-media">
-                  <a href="javascript:;">
-                    <img
-                      width="358"
-                      height="460"
-                      alt=""
-                      src="images/our-team/pic4.jpg"
-                    />
-                  </a>
-                  <div class="dlab-info-has skew-has bg-primary">
-                    <ul class="dlab-social-icon dez-border">
-                      <li>
-                        <a
-                          class="fa fa-facebook"
-                          href="javascript:void(0);"
-                        ></a>
-                      </li>
-                      <li>
-                        <a class="fa fa-twitter" href="javascript:void(0);"></a>
-                      </li>
-                      <li>
-                        <a
-                          class="fa fa-linkedin"
-                          href="javascript:void(0);"
-                        ></a>
-                      </li>
-                      <li>
-                        <a
-                          class="fa fa-facebook"
-                          href="javascript:void(0);"
-                        ></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="p-a10">
-                  <h4 class="dlab-title text-uppercase m-b5">
-                    <a href="javascript:;">konne Backfield</a>
-                  </h4>
-                  <span class="dlab-member-position">Manager</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Team member END -->
     <!-- Latest blog -->
     <div class="section-full content-inner">
       <div class="container">
         <div class="section-head text-center">
-          <h2 class="text-uppercase">Latest blog post</h2>
+          <h2 class="text-uppercase">Tin tức</h2>
           <div class="dlab-separator-outer">
             <div class="dlab-separator bg-secondry style-skew"></div>
           </div>
         </div>
         <div class="section-content">
-          <div class="blog-carousel owl-carousel owl-none">
-            <div class="item">
-              <div class="blog-post latest-blog-1 date-style-3 skew-date">
-                <div class="dlab-post-media dlab-img-effect zoom-slow">
-                  <a href="javascript:;"
-                    ><img src="images/blog/latest-blog/pic1.jpg" alt=""
-                  /></a>
-                </div>
-                <div class="dlab-post-info p-t20">
-                  <div class="dlab-post-title">
-                    <h3 class="post-title">
-                      <a href="javascript:;">Title of first blog post</a>
-                    </h3>
-                  </div>
-                  <div class="dlab-post-meta">
-                    <ul>
-                      <li class="post-date">
-                        <i class="ti-calendar"></i><strong>10 Aug</strong>
-                        <span> 2016</span>
-                      </li>
-                      <li class="post-author">
-                        <i class="fa fa-user"></i>By
-                        <a href="javascript:;">demongo</a>
-                      </li>
-                      <li class="post-comment">
-                        <i class="fa fa-comments-o"></i>
-                        <a href="javascript:;">0 comment</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="dlab-post-text">
-                    <p>
-                      There are many variations of passages of Lorem Ipsum
-                      typesetting industry has been the standard dummy text ever
-                      since the when printer.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="blog-post latest-blog-1 date-style-3 skew-date">
-                <div class="dlab-post-media dlab-img-effect zoom-slow">
-                  <a href="javascript:;"
-                    ><img src="images/blog/latest-blog/pic2.jpg" alt=""
-                  /></a>
-                </div>
-                <div class="dlab-post-info p-t20">
-                  <div class="dlab-post-title">
-                    <h3 class="post-title">
-                      <a href="javascript:;">Title of first blog post</a>
-                    </h3>
-                  </div>
-                  <div class="dlab-post-meta">
-                    <ul>
-                      <li class="post-date">
-                        <i class="ti-calendar"></i><strong>10 Aug</strong>
-                        <span> 2016</span>
-                      </li>
-                      <li class="post-author">
-                        <i class="fa fa-user"></i>By
-                        <a href="javascript:;">demongo</a>
-                      </li>
-                      <li class="post-comment">
-                        <i class="fa fa-comments-o"></i>
-                        <a href="javascript:;">0 comment</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="dlab-post-text">
-                    <p>
-                      There are many variations of passages of Lorem Ipsum
-                      typesetting industry has been the standard dummy text ever
-                      since the when printer.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="blog-post latest-blog-1 date-style-3 skew-date">
-                <div class="dlab-post-media dlab-img-effect zoom-slow">
-                  <a href="javascript:;"
-                    ><img src="images/blog/latest-blog/pic3.jpg" alt=""
-                  /></a>
-                </div>
-                <div class="dlab-post-info p-t20">
-                  <div class="dlab-post-title">
-                    <h3 class="post-title">
-                      <a href="javascript:;">Title of first blog post</a>
-                    </h3>
-                  </div>
-                  <div class="dlab-post-meta">
-                    <ul>
-                      <li class="post-date">
-                        <i class="ti-calendar"></i><strong>10 Aug</strong>
-                        <span> 2016</span>
-                      </li>
-                      <li class="post-author">
-                        <i class="fa fa-user"></i>By
-                        <a href="javascript:;">demongo</a>
-                      </li>
-                      <li class="post-comment">
-                        <i class="fa fa-comments-o"></i>
-                        <a href="javascript:;">0 comment</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="dlab-post-text">
-                    <p>
-                      There are many variations of passages of Lorem Ipsum
-                      typesetting industry has been the standard dummy text ever
-                      since the when printer.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <VueSlickCarousel
+            class="blog-carousel"
+            v-bind="
+              vueSlickMultipleSlideSetting(false, false, true, 3, 2, 2, 1)
+            "
+          >
+            <article-item
+              v-bind="{
+                article: {
+                  image: 'images/blog/latest-blog/pic1.jpg',
+                  title: 'Title of first blog post',
+                  description:
+                    'There are many variations of passages of Lorem Ipsum typesetting industry has been the standard dummy text ever since the when printer.',
+                  createdAt: '20/10/2021',
+                  createdBy: 'Admin',
+                },
+              }"
+            />
+            <article-item
+              v-bind="{
+                article: {
+                  image: 'images/blog/latest-blog/pic1.jpg',
+                  title: 'Title of first blog post',
+                  description:
+                    'There are many variations of passages of Lorem Ipsum typesetting industry has been the standard dummy text ever since the when printer.',
+                  createdAt: '20/10/2021',
+                  createdBy: 'Admin',
+                },
+              }"
+            />
+            <article-item
+              v-bind="{
+                article: {
+                  image: 'images/blog/latest-blog/pic1.jpg',
+                  title: 'Title of first blog post',
+                  description:
+                    'There are many variations of passages of Lorem Ipsum typesetting industry has been the standard dummy text ever since the when printer.',
+                  createdAt: '20/10/2021',
+                  createdBy: 'Admin',
+                },
+              }"
+            />
+            <article-item
+              v-bind="{
+                article: {
+                  image: 'images/blog/latest-blog/pic1.jpg',
+                  title: 'Title of first blog post',
+                  description:
+                    'There are many variations of passages of Lorem Ipsum typesetting industry has been the standard dummy text ever since the when printer.',
+                  createdAt: '20/10/2021',
+                  createdBy: 'Admin',
+                },
+              }"
+            />
+          </VueSlickCarousel>
         </div>
       </div>
     </div>
@@ -885,168 +684,111 @@
     <!-- Testimonials blog -->
     <div
       class="section-full overlay-black-middle bg-img-fix content-inner-1"
-      style="background-image: url(images/background/bg2.jpg)"
+      style="background-image: url(images/background/bg2-img.jpg)"
     >
       <div class="container">
         <div class="section-head text-white text-center">
-          <h2 class="text-uppercase">What peolpe are saying</h2>
+          <h2 class="text-uppercase">Mọi người nói về chúng tôi</h2>
           <div class="dlab-separator-outer">
             <div class="dlab-separator bg-white style-skew"></div>
           </div>
         </div>
         <div class="section-content">
-          <div
+          <VueSlickCarousel
+            v-bind="
+              vueSlickMultipleSlideSetting(false, false, true, 2, 2, 1, 1)
+            "
             class="testimonial-four owl-carousel owl-none owl-theme owl-dots-white-full"
           >
-            <div class="item">
-              <div class="testimonial-4 testimonial-bg">
-                <div class="testimonial-pic">
-                  <img
-                    src="images/testimonials/pic1.jpg"
-                    width="100"
-                    height="100"
-                    alt=""
-                  />
-                </div>
-                <div class="testimonial-text">
-                  <p>
-                    There are many variations of passages of Lorem Ipsum
-                    typesetting industry has been the standard dummy text ever
-                    since the when printer.
-                  </p>
-                </div>
-                <div class="testimonial-detail">
-                  <strong class="testimonial-name">David Matin</strong>
-                  <span class="testimonial-position">Student</span>
-                </div>
-                <div class="quote-right"></div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="testimonial-4 testimonial-bg">
-                <div class="testimonial-pic">
-                  <img
-                    src="images/testimonials/pic1.jpg"
-                    width="100"
-                    height="100"
-                    alt=""
-                  />
-                </div>
-                <div class="testimonial-text">
-                  <p>
-                    There are many variations of passages of Lorem Ipsum
-                    typesetting industry has been the standard dummy text ever
-                    since the when printer.
-                  </p>
-                </div>
-                <div class="testimonial-detail">
-                  <strong class="testimonial-name">David Matin</strong>
-                  <span class="testimonial-position">Student</span>
-                </div>
-                <div class="quote-right"></div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="testimonial-4 testimonial-bg">
-                <div class="testimonial-pic">
-                  <img
-                    src="images/testimonials/pic1.jpg"
-                    width="100"
-                    height="100"
-                    alt=""
-                  />
-                </div>
-                <div class="testimonial-text">
-                  <p>
-                    There are many variations of passages of Lorem Ipsum
-                    typesetting industry has been the standard dummy text ever
-                    since the when printer.
-                  </p>
-                </div>
-                <div class="testimonial-detail">
-                  <strong class="testimonial-name">David Matin</strong>
-                  <span class="testimonial-position">Student</span>
-                </div>
-                <div class="quote-right"></div>
-              </div>
-            </div>
-          </div>
+            <say-people-item
+              v-for="(saypeople, i) in sayPeoples"
+              :key="i"
+              :say-people="saypeople"
+            />
+          </VueSlickCarousel>
         </div>
       </div>
     </div>
     <!-- Testimonials blog END -->
     <!-- Client logo -->
-    <div class="section-full dlab-we-find bg-img-fix p-t50 p-b50">
-      <div class="container">
-        <div class="section-content">
-          <div
-            class="client-logo-carousel owl-carousel mfp-gallery gallery owl-btn-center-lr"
-          >
-            <div class="item">
-              <div class="ow-client-logo">
-                <div class="client-logo">
-                  <a href="#"
-                    ><img src="images/client-logo/logo1.jpg" alt=""
-                  /></a>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="ow-client-logo">
-                <div class="client-logo">
-                  <a href="#"
-                    ><img src="images/client-logo/logo2.jpg" alt=""
-                  /></a>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="ow-client-logo">
-                <div class="client-logo">
-                  <a href="#"
-                    ><img src="images/client-logo/logo1.jpg" alt=""
-                  /></a>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="ow-client-logo">
-                <div class="client-logo">
-                  <a href="#"
-                    ><img src="images/client-logo/logo3.jpg" alt=""
-                  /></a>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="ow-client-logo">
-                <div class="client-logo">
-                  <a href="#"
-                    ><img src="images/client-logo/logo4.jpg" alt=""
-                  /></a>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="ow-client-logo">
-                <div class="client-logo">
-                  <a href="#"
-                    ><img src="images/client-logo/logo3.jpg" alt=""
-                  /></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!--    <div class="section-full dlab-we-find bg-img-fix p-t50 p-b50">-->
+    <!--      <div class="container">-->
+    <!--        <div class="section-content">-->
+    <!--          <div-->
+    <!--            class="client-logo-carousel owl-carousel mfp-gallery gallery owl-btn-center-lr"-->
+    <!--          >-->
+    <!--            <div class="item">-->
+    <!--              <div class="ow-client-logo">-->
+    <!--                <div class="client-logo">-->
+    <!--                  <a href="#"-->
+    <!--                    ><img src="images/client-logo/logo1.jpg" alt=""-->
+    <!--                  /></a>-->
+    <!--                </div>-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--            <div class="item">-->
+    <!--              <div class="ow-client-logo">-->
+    <!--                <div class="client-logo">-->
+    <!--                  <a href="#"-->
+    <!--                    ><img src="images/client-logo/logo2.jpg" alt=""-->
+    <!--                  /></a>-->
+    <!--                </div>-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--            <div class="item">-->
+    <!--              <div class="ow-client-logo">-->
+    <!--                <div class="client-logo">-->
+    <!--                  <a href="#"-->
+    <!--                    ><img src="images/client-logo/logo1.jpg" alt=""-->
+    <!--                  /></a>-->
+    <!--                </div>-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--            <div class="item">-->
+    <!--              <div class="ow-client-logo">-->
+    <!--                <div class="client-logo">-->
+    <!--                  <a href="#"-->
+    <!--                    ><img src="images/client-logo/logo3.jpg" alt=""-->
+    <!--                  /></a>-->
+    <!--                </div>-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--            <div class="item">-->
+    <!--              <div class="ow-client-logo">-->
+    <!--                <div class="client-logo">-->
+    <!--                  <a href="#"-->
+    <!--                    ><img src="images/client-logo/logo4.jpg" alt=""-->
+    <!--                  /></a>-->
+    <!--                </div>-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--            <div class="item">-->
+    <!--              <div class="ow-client-logo">-->
+    <!--                <div class="client-logo">-->
+    <!--                  <a href="#"-->
+    <!--                    ><img src="images/client-logo/logo3.jpg" alt=""-->
+    <!--                  /></a>-->
+    <!--                </div>-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
     <!-- Client logo END -->
   </div>
 </template>
 
 <script>
+import { CommonMixin } from '@/shared/mixins/CommonMixin'
+import ArticleItem from '@/components/shared/articleitem/index'
+import ProductItem from '@/components/shared/productitem/index'
+import SayPeopleItem from '@/components/shared/saypeopleitem/index'
+
 export default {
   name: 'HomePage',
+  components: { SayPeopleItem, ProductItem, ArticleItem },
+  mixins: [CommonMixin],
 }
 </script>
 

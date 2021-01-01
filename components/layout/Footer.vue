@@ -56,11 +56,11 @@
                 <img src="/images/logo.png" alt="" />
               </div>
               <p>
-                <strong>Auto Care</strong> ipsum dolor sit amet, consectetuer
-                adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                laoreet dolore agna aliquam erat . wisi enim ad minim veniam,
-                quis tation. sit amet, consec tetuer.ipsum dolor sit amet,
-                consectetuer.
+                <strong>T-TECH </strong> là một trong những đơn vị đã sản xuất,
+                sửa chữa xe chữa cháy với chất lượng và uy tín cao, được các
+                khách hàng ghi nhận. Với khả năng làm chủ hoàn toàn các nghệ mới
+                nên sản phẩm được thiết kế và sản xuất phù hợp, ổn định, thiện,
+                hiểu quả với người sử dụng.
               </p>
               <ul class="dlab-social-icon dez-border">
                 <li>
@@ -80,92 +80,24 @@
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6 footer-col-4">
             <div class="widget recent-posts-entry">
-              <h4 class="m-b15 text-uppercase">Recent Post</h4>
+              <h4 class="m-b15 text-uppercase">Tin tức</h4>
               <div class="dlab-separator-outer m-b10">
                 <div class="dlab-separator bg-white style-skew"></div>
               </div>
               <div class="widget-post-bx">
-                <div class="widget-post clearfix">
-                  <div class="dlab-post-media">
-                    <img
-                      src="/images/blog/recent-blog/pic1.jpg"
-                      alt=""
-                      width="200"
-                      height="143"
-                    />
-                  </div>
-                  <div class="dlab-post-info">
-                    <div class="dlab-post-header">
-                      <h6 class="post-title text-uppercase">
-                        <a href="blog-single.html">Title of first blog</a>
-                      </h6>
-                    </div>
-                    <div class="dlab-post-meta">
-                      <ul>
-                        <li class="post-author">By <a href="#">Admin</a></li>
-                        <li class="post-comment">
-                          <i class="fa fa-comments-o"></i> 28
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="widget-post clearfix">
-                  <div class="dlab-post-media">
-                    <img
-                      src="/images/blog/recent-blog/pic2.jpg"
-                      alt=""
-                      width="200"
-                      height="160"
-                    />
-                  </div>
-                  <div class="dlab-post-info">
-                    <div class="dlab-post-header">
-                      <h6 class="post-title text-uppercase">
-                        <a href="blog-single.html">Title of first blog</a>
-                      </h6>
-                    </div>
-                    <div class="dlab-post-meta">
-                      <ul>
-                        <li class="post-author">By <a href="#">Admin</a></li>
-                        <li class="post-comment">
-                          <i class="fa fa-comments-o"></i> 28
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="widget-post clearfix">
-                  <div class="dlab-post-media">
-                    <img
-                      src="/images/blog/recent-blog/pic3.jpg"
-                      alt=""
-                      width="200"
-                      height="160"
-                    />
-                  </div>
-                  <div class="dlab-post-info">
-                    <div class="dlab-post-header">
-                      <h6 class="post-title text-uppercase">
-                        <a href="blog-single.html">Title of first blog</a>
-                      </h6>
-                    </div>
-                    <div class="dlab-post-meta">
-                      <ul>
-                        <li class="post-author">By <a href="#">Admin</a></li>
-                        <li class="post-comment">
-                          <i class="fa fa-comments-o"></i> 28
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+                <article-item-small
+                  v-bind="{
+                    image: '/images/blog/recent-blog/pic1.jpg',
+                    title: 'Title Of First Blog Post Entry',
+                    author: 'Admin',
+                  }"
+                />
               </div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6 footer-col-4">
             <div class="widget widget_services">
-              <h4 class="m-b15 text-uppercase">Our services</h4>
+              <h4 class="m-b15 text-uppercase">Dịch vụ</h4>
               <div class="dlab-separator-outer m-b10">
                 <div class="dlab-separator bg-white style-skew"></div>
               </div>
@@ -189,24 +121,21 @@
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6 footer-col-4">
             <div class="widget widget_getintuch">
-              <h4 class="m-b15 text-uppercase">Contact us</h4>
+              <h4 class="m-b15 text-uppercase">Liên hệ</h4>
               <div class="dlab-separator-outer m-b10">
                 <div class="dlab-separator bg-white style-skew"></div>
               </div>
               <ul>
                 <li>
-                  <i class="ti-location-pin"></i><strong>address</strong> demo
+                  <i class="ti-location-pin"></i><strong>Địa chỉ</strong> demo
                   address #8901 Marmora Road Chi Minh City, Vietnam
                 </li>
                 <li>
-                  <i class="ti-mobile"></i><strong>phone</strong>0800-123456
-                  (24/7 Support Line)
+                  <i class="ti-mobile"></i
+                  ><strong>Điện thoại</strong>0800-123456 (24/7 Support Line)
                 </li>
                 <li>
-                  <i class="ti-printer"></i><strong>FAX</strong>(123) 123-4567
-                </li>
-                <li>
-                  <i class="ti-email"></i><strong>email</strong>info@demo.com
+                  <i class="ti-email"></i><strong>Email</strong>info@demo.com
                 </li>
               </ul>
             </div>
@@ -223,14 +152,13 @@
           </div>
           <div class="col-lg-4 col-md-4 text-center">
             <span>
-              Design With <i class="ti-heart text-primary heart"></i> By
-              DexignLab
+              Design With <i class="ti-heart text-primary heart"></i> By T-Tech
             </span>
           </div>
           <div class="col-lg-4 col-md-4 text-right">
-            <a href="about-1.html"> About Us</a>
-            <a href="faq-1.html"> FAQs</a>
-            <a href="contact.html"> Contact Us</a>
+            <a href="about-1.html"> Giới thiệu</a>
+            <a href="faq-1.html"> Hỏi đáp</a>
+            <a href="contact.html"> Liên hệ</a>
           </div>
         </div>
       </div>
@@ -239,8 +167,10 @@
 </template>
 
 <script>
+import ArticleItemSmall from '@/components/shared/articleitemsm/index'
 export default {
   name: 'Footer',
+  components: { ArticleItemSmall },
 }
 </script>
 
