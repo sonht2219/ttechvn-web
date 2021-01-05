@@ -1,5 +1,5 @@
 export default ($axios) => (resource) => ({
-  list(params) {
+  list(params = null) {
     return $axios.get(`${resource}`, { params })
   },
   single(id) {

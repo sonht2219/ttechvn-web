@@ -120,15 +120,11 @@
                   </li>
                 </ul>
               </li>
-              <li :class="{ active: isMatchRoute('/service') }">
-                <nuxt-link to="/service">Dịch vụ</nuxt-link>
-              </li>
-              <li :class="{ active: isMatchRoute('/article') }">
-                <nuxt-link to="/article">Tin tức</nuxt-link>
-              </li>
-              <li :class="{ active: isMatchRoute('/recruitment') }">
-                <nuxt-link to="/recruitment">Tuyển dụng</nuxt-link>
-              </li>
+              <template v-for="(category, i) in categoriesTypeArticle">
+                <li :key="i" :class="{ active: isMatchRoute('/service') }">
+                  <nuxt-link to="/service">{{ category.name }}</nuxt-link>
+                </li>
+              </template>
               <li :class="{ active: isMatchRoute('/contact') }">
                 <nuxt-link to="/contact">Liên hệ</nuxt-link>
               </li>
@@ -142,13 +138,20 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters, mapActions } from 'vuex'
 import { DeviceType, ResizeMixin } from '@/shared/mixins/ResizeMixin'
 import { CommonMixin } from '@/shared/mixins/CommonMixin'
 
 export default {
   name: 'Header',
   mixins: [ResizeMixin, CommonMixin],
+  async fetch() {
+    try {
+      await this.listCategories()
+    } catch (e) {
+      console.log(e)
+    }
+  },
   data() {
     return {
       deviceType: DeviceType,
@@ -166,6 +169,15 @@ export default {
   },
   computed: {
     ...mapState(['device']),
+    ...mapGetters({
+      categoriesTypeArticle: 'category/listTypeArticle',
+      categoriesTypeProduct: 'category/listTypeProduct',
+    }),
+  },
+  methods: {
+    ...mapActions({
+      listCategories: 'category/loadCategories',
+    }),
   },
 }
 </script>

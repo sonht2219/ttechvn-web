@@ -105,9 +105,6 @@
               phù hợp, hiệu quả cho quý khách hàng. Để được phục vụ xin hãy liên
               hệ với chúng tôi
             </p>
-            <ul>
-              <li v-for="(ct, i) in categories" :key="i">{{ ct.name }}</li>
-            </ul>
             <div class="row">
               <div class="col-md-4 col-lg-4 col-sm-4 m-b15">
                 <div class="icon-bx-wraper bx-style-1 p-tb15 p-lr10 center">
@@ -792,18 +789,6 @@ export default {
   name: 'HomePage',
   components: { SayPeopleItem, ProductItem, ArticleItem },
   mixins: [CommonMixin],
-  async fetch() {
-    try {
-      const { data } = await this.$repositories.categories.list({})
-      this.categories = data.datas
-      console.log(data.datas)
-    } catch (e) {
-      console.log(e.response)
-    }
-  },
-  data: () => ({
-    categories: [],
-  }),
 }
 </script>
 
