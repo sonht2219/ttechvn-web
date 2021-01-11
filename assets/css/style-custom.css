@@ -61,6 +61,18 @@
   height: auto !important;
 }
 
+.dlab-info-custom {
+  min-height: 186px;
+}
+
+.dlab-tilte-custom {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @media only screen and (max-width: 480px) {
   .testimonial-4 .testimonial-pic {
     height: 80px !important;

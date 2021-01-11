@@ -1,5 +1,7 @@
 import { CommonStatus } from '@/shared/enums/status'
 import { CategoryType } from '@/shared/enums/type'
+import { flattenChildren } from '@/shared/helper/helper'
+import union from 'lodash/union'
 
 export const MAP_CATEGORY = 'MAP_CATEGORY'
 
@@ -16,6 +18,16 @@ export const getters = {
   listIdsTypeProduct: (state) => {
     return state.idByType[CategoryType.Product]
   },
+  listIdsChildrenTypeProduct: (state) => {
+    let result = []
+    state.idByType[CategoryType.Product]?.forEach((id) => {
+      result = union(
+        result,
+        flattenChildren(state.data[id]).map((child) => child.id)
+      )
+    })
+    return result
+  },
   listAllIds: (state) => {
     return state.ids
   },
@@ -24,9 +36,6 @@ export const getters = {
   },
   listTypeProduct: (state) => {
     return state.idByType[CategoryType.Product]?.map((id) => state.data[id])
-  },
-  dataMapper: (state) => {
-    return state.data
   },
 }
 
@@ -37,6 +46,7 @@ export const mutations = {
       ?.filter((category) => category.status === CommonStatus.Active)
       ?.map((category) => {
         mapper[category.id] = category
+        flattenChildren(category).forEach((child) => (mapper[child.id] = child))
         state.idByType[category.type] = [
           ...(state.idByType[category.type] || []),
           category.id,

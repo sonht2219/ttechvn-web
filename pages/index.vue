@@ -443,48 +443,20 @@
           </div>
         </div>
         <div class="section-content text-center">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <product-item />
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <product-item />
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <product-item />
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <product-item />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <product-item />
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <product-item />
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <product-item />
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <product-item />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <product-item />
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <product-item />
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <product-item />
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <product-item />
-            </div>
-          </div>
+          <!--          <div class="row">-->
+          <!--            <div class="col-lg-3 col-md-6 col-sm-6">-->
+          <!--              <product-item :id="1" />-->
+          <!--            </div>-->
+          <!--            <div class="col-lg-3 col-md-6 col-sm-6">-->
+          <!--              <product-item :id="1" />-->
+          <!--            </div>-->
+          <!--            <div class="col-lg-3 col-md-6 col-sm-6">-->
+          <!--              <product-item :id="1" />-->
+          <!--            </div>-->
+          <!--            <div class="col-lg-3 col-md-6 col-sm-6">-->
+          <!--              <product-item :id="1" />-->
+          <!--            </div>-->
+          <!--          </div>-->
         </div>
       </div>
     </div>
@@ -782,12 +754,12 @@
 <script>
 import { CommonMixin } from '@/shared/mixins/CommonMixin'
 import ArticleItem from '@/components/shared/articleitem/index'
-import ProductItem from '@/components/shared/productitem/index'
+// import ProductItem from '@/components/shared/productitem/index'
 import SayPeopleItem from '@/components/shared/saypeopleitem/index'
 
 export default {
   name: 'HomePage',
-  components: { SayPeopleItem, ProductItem, ArticleItem },
+  components: { SayPeopleItem, ArticleItem },
   mixins: [CommonMixin],
 }
 </script>

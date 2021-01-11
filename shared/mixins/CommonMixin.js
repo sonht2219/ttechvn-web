@@ -53,6 +53,11 @@ export const CommonMixin = {
     isMatchRoute(path) {
       return this.$route.path === path
     },
+    slugToCategory(slug) {
+      return Object.values(this.$store.state.category.data).find(
+        (category) => category.slug === slug
+      )
+    },
     vueSlickMultipleSlideSetting(
       dots,
       arrows,

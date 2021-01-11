@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- inner page banner -->
-    <inner-banner v-bind="{ title: 'Sản phẩm' }" />
+    <inner-banner v-bind="{ title: title }" />
     <!-- inner page banner END -->
     <!-- Breadcrumb row -->
     <bread-crumb />
@@ -35,18 +35,9 @@
             <div class="widget bg-white widget_services">
               <h4 class="widget-title">Danh mục</h4>
               <ul>
-                <li><a href="#">Engine Diagnostics</a></li>
-                <li><a href="#">Lube, Oil and Filters</a></li>
-                <li><a href="#">Belts and Hoses</a></li>
-                <li><a href="#">Air Conditioning</a></li>
-                <li><a href="#">Brake Repair</a></li>
-                <li><a href="#">Auto Careion Auto Careion</a></li>
-                <li><a href="#">Water Tank Auto Careion</a></li>
-                <li><a href="#">Auto Careion Solutions</a></li>
-                <li><a href="#">Air Duct Auto Careion</a></li>
-                <li><a href="#">Seasonal Auto Careion</a></li>
-                <li><a href="#">Wodden Floor Auto Careion</a></li>
-                <li><a href="#">Lube, Oil and Filters</a></li>
+                <li v-for="categoryId in listIdsCategory" :key="categoryId">
+                  <category-title :id="categoryId" />
+                </li>
               </ul>
             </div>
             <div class="widget bg-white recent-posts-entry">
@@ -93,33 +84,22 @@
               </div>
             </div>
             <div id="masonry" class="row">
-              <div class="col-lg-4 col-md-6 m-b30 product-item card-container">
-                <product-item />
-              </div>
-              <div class="col-lg-4 col-md-6 m-b30 product-item card-container">
-                <product-item />
-              </div>
-              <div class="col-lg-4 col-md-6 m-b30 product-item card-container">
-                <product-item />
-              </div>
-              <div class="col-lg-4 col-md-6 m-b30 product-item card-container">
-                <product-item />
-              </div>
-              <div class="col-lg-4 col-md-6 m-b30 product-item card-container">
-                <product-item />
-              </div>
-              <div class="col-lg-4 col-md-6 m-b30 product-item card-container">
-                <product-item />
-              </div>
-              <div class="col-lg-4 col-md-6 m-b30 product-item card-container">
-                <product-item />
-              </div>
-              <div class="col-lg-4 col-md-6 m-b30 product-item card-container">
-                <product-item />
-              </div>
-              <div class="col-lg-4 col-md-6 m-b30 product-item card-container">
-                <product-item />
-              </div>
+              <template v-for="id in productIds">
+                <div
+                  :key="id"
+                  class="col-lg-4 col-md-6 m-b30 product-item card-container"
+                >
+                  <product-item :id="id" />
+                </div>
+              </template>
+            </div>
+            <div class="row">
+              <pagination
+                v-model="page"
+                :per-page="1"
+                :records="20"
+                @paginate="paginate"
+              />
             </div>
           </div>
         </div>
@@ -146,9 +126,12 @@ import InnerBanner from '@/components/shared/innerbanner/index'
 import ProductService from '@/components/shared/productservice/index'
 import ArticleItemSmall from '@/components/shared/articleitemsm/index'
 import { CommonMixin } from '@/shared/mixins/CommonMixin'
+import { mapActions, mapState, mapGetters } from 'vuex'
+import CategoryTitle from '@/components/shared/categorytitle/index'
 export default {
   name: 'Category',
   components: {
+    CategoryTitle,
     ArticleItemSmall,
     ProductService,
     InnerBanner,
@@ -156,6 +139,57 @@ export default {
     ProductItem,
   },
   mixins: [CommonMixin],
+  data: () => ({
+    page: 1,
+  }),
+  async fetch() {
+    const params = {
+      ...{},
+      page: 1,
+      limit: 20,
+      category: this.$route.params.slug,
+    }
+    await this.loadProduct(params)
+  },
+  computed: {
+    ...mapState({
+      productIds: (state) => state.product.ids,
+    }),
+    ...mapGetters({
+      listIdsCategory: 'category/listIdsChildrenTypeProduct',
+    }),
+    title() {
+      return this.slugToCategory(this.$route.params.slug)?.name
+    },
+    pagination: {
+      set(val) {
+        console.log(val)
+      },
+      get() {
+        return {
+          currentPage: this.$store.state.product.meta?.current_page,
+          limit: this.$store.state.product.meta?.limit,
+          total: this.$store.state.product.meta?.total,
+        }
+      },
+    },
+  },
+  methods: {
+    ...mapActions({
+      listProduct: 'product/list',
+    }),
+    async loadProduct(params) {
+      try {
+        await this.listProduct(params)
+        console.log(this.productIds)
+      } catch (e) {
+        console.log(e)
+      }
+    },
+    paginate(page) {
+      console.log(page)
+    },
+  },
 }
 </script>
 

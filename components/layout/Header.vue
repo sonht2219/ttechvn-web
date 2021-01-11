@@ -100,24 +100,23 @@
                   >Sản phẩm<i class="fa fa-chevron-down"></i
                 ></nuxt-link>
                 <ul class="sub-menu">
-                  <li>
-                    <nuxt-link to="/category"
-                      >Máy móc <i class="fa fa-angle-right"></i
-                    ></nuxt-link>
-                    <ul class="sub-menu">
-                      <li><nuxt-link to="/category">Máy móc 1</nuxt-link></li>
-                      <li><nuxt-link to="/category">Máy móc 2</nuxt-link></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <nuxt-link to="/category"
-                      >Xe tải <i class="fa fa-angle-right"></i
-                    ></nuxt-link>
-                    <ul class="sub-menu">
-                      <li><nuxt-link to="/category">Xe tải 1</nuxt-link></li>
-                      <li><nuxt-link to="/category">Xe tải 2</nuxt-link></li>
-                    </ul>
-                  </li>
+                  <template v-for="(category, i) in categoriesTypeProduct">
+                    <li :key="i">
+                      <nuxt-link :to="`/danh-muc/${category.slug}`"
+                        >{{ getProp(category, 'name') }}
+                        <i class="fa fa-angle-right"></i
+                      ></nuxt-link>
+                      <ul v-if="category.children" class="sub-menu">
+                        <template v-for="(child, j) in category.children">
+                          <li :key="j">
+                            <nuxt-link :to="`/danh-muc/${child.slug}`">{{
+                              getProp(child, 'name')
+                            }}</nuxt-link>
+                          </li>
+                        </template>
+                      </ul>
+                    </li>
+                  </template>
                 </ul>
               </li>
               <template v-for="(category, i) in categoriesTypeArticle">
@@ -155,16 +154,6 @@ export default {
   data() {
     return {
       deviceType: DeviceType,
-      settings: {
-        dots: false,
-        edgeFriction: 0.35,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        swipeToSlide: true,
-        adaptiveHeight: true,
-      },
     }
   },
   computed: {
