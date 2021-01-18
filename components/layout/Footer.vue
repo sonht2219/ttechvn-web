@@ -1,52 +1,5 @@
 <template>
   <footer class="site-footer">
-    <!-- newsletter part -->
-    <div class="bg-primary dlab-newsletter">
-      <div class="container equal-wraper">
-        <form class="dzSubscribe" action="script/mailchamp.php" method="post">
-          <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12">
-              <div class="icon-bx-wraper equal-col p-t30 p-b20 left">
-                <div class="icon-lg text-white radius">
-                  <i class="ti-email"></i>
-                </div>
-                <div class="icon-content">
-                  <strong class="text-black text-uppercase font-18"
-                    >Subscribe</strong
-                  >
-                  <h2 class="dlab-tilte text-uppercase">Our Newsletter</h2>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-              <div class="dzSubscribeMsg"></div>
-              <div class="input-group equal-col p-t40 p-b10">
-                <input
-                  name="dzEmail"
-                  required
-                  placeholder="Email address"
-                  class="form-control"
-                  type="text"
-                />
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-12 offset-lg-1 offset-md-1">
-              <div class="equal-col p-t40 p-b10 skew-subscribe">
-                <button
-                  name="submit"
-                  value="Submit"
-                  type="submit"
-                  class="site-button-secondry button-skew z-index1"
-                >
-                  <span>Subscribe</span><i class="fa fa-angle-right"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-    <!-- footer top part -->
     <div class="footer-top">
       <div class="container">
         <div class="row">
@@ -85,13 +38,9 @@
                 <div class="dlab-separator bg-white style-skew"></div>
               </div>
               <div class="widget-post-bx">
-                <article-item-small
-                  v-bind="{
-                    image: '/images/blog/recent-blog/pic1.jpg',
-                    title: 'Title Of First Blog Post Entry',
-                    author: 'Admin',
-                  }"
-                />
+                <template v-for="(slug, i) in articleSlugs">
+                  <article-item-small :key="`article-${i}`" :slug="slug" />
+                </template>
               </div>
             </div>
           </div>
@@ -168,9 +117,15 @@
 
 <script>
 import ArticleItemSmall from '@/components/shared/articleitemsm/index'
+import { mapState } from 'vuex'
 export default {
   name: 'Footer',
   components: { ArticleItemSmall },
+  computed: {
+    ...mapState({
+      articleSlugs: (state) => state.article.slugs,
+    }),
+  },
 }
 </script>
 

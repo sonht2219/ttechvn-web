@@ -55,7 +55,7 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: 'http://ttech.dev.net/api/guest/',
+    baseURL: 'https://api.t-techvn.com/api/guest/',
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

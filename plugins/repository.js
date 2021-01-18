@@ -6,6 +6,7 @@ export default (ctx, inject) => {
     products: initRepository('products'),
     categories: initRepository('categories'),
     tags: initRepository('tags'),
+    articles: initRepository('articles'),
   }
 
   inject('repositories', repositories)

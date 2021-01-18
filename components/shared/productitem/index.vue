@@ -4,7 +4,7 @@
       <img :src="getProp(product, 'image_urls[0]')" alt="" />
       <div class="overlay-bx">
         <div class="overlay-icon">
-          <a href="javascript:void(0)">
+          <a href="javascript:void(0)" @click="detailProduct(product.slug)">
             <i class="fa fa-search icon-bx-xs"></i>
           </a>
         </div>
@@ -16,7 +16,9 @@
       </h4>
       <h2 class="m-b0">Giá: Liên hệ</h2>
       <div class="m-t20">
-        <a href="#" class="site-button">Chi tiết</a>
+        <a href="#" class="site-button" @click="detailProduct(product.slug)"
+          >Chi tiết</a
+        >
       </div>
     </div>
   </div>
@@ -29,8 +31,8 @@ export default {
   name: 'ProductItem',
   mixins: [CommonMixin],
   props: {
-    id: {
-      type: Number,
+    slug: {
+      type: String,
       required: true,
     },
   },
@@ -39,7 +41,12 @@ export default {
       dataProduct: (state) => state.product.data,
     }),
     product() {
-      return this.dataProduct[this.id]
+      return this.dataProduct[this.slug]
+    },
+  },
+  methods: {
+    detailProduct(slug) {
+      this.$router.push({ name: 'san-pham-slug', params: { slug } })
     },
   },
 }

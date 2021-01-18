@@ -92,26 +92,27 @@
               <li :class="{ active: isMatchRoute('/') }">
                 <nuxt-link to="/">Trang chủ</nuxt-link>
               </li>
-              <li :class="{ active: isMatchRoute('/about') }">
-                <nuxt-link to="/about">Giới thiệu</nuxt-link>
+              <li :class="{ active: isMatchRoute('/bai-viet/gioi-thieu') }">
+                <nuxt-link :to="`bai-viet/gioi-thieu`">Giới thiệu</nuxt-link>
               </li>
               <li :class="{ active: isMatchRoute('/category') }">
-                <nuxt-link to="/category"
+                <a href="javascript:"
                   >Sản phẩm<i class="fa fa-chevron-down"></i
-                ></nuxt-link>
+                ></a>
                 <ul class="sub-menu">
                   <template v-for="(category, i) in categoriesTypeProduct">
                     <li :key="i">
-                      <nuxt-link :to="`/danh-muc/${category.slug}`"
+                      <nuxt-link :to="`/san-pham?category=${category.slug}`"
                         >{{ getProp(category, 'name') }}
                         <i class="fa fa-angle-right"></i
                       ></nuxt-link>
                       <ul v-if="category.children" class="sub-menu">
                         <template v-for="(child, j) in category.children">
                           <li :key="j">
-                            <nuxt-link :to="`/danh-muc/${child.slug}`">{{
-                              getProp(child, 'name')
-                            }}</nuxt-link>
+                            <nuxt-link
+                              :to="`/san-pham?category=${child.slug}`"
+                              >{{ getProp(child, 'name') }}</nuxt-link
+                            >
                           </li>
                         </template>
                       </ul>
@@ -120,8 +121,15 @@
                 </ul>
               </li>
               <template v-for="(category, i) in categoriesTypeArticle">
-                <li :key="i" :class="{ active: isMatchRoute('/service') }">
-                  <nuxt-link to="/service">{{ category.name }}</nuxt-link>
+                <li
+                  :key="i"
+                  :class="{
+                    active: isMatchRoute(`/bai-viet?category=${category.slug}`),
+                  }"
+                >
+                  <nuxt-link :to="`bai-viet?category=${category.slug}`">{{
+                    category.name
+                  }}</nuxt-link>
                 </li>
               </template>
               <li :class="{ active: isMatchRoute('/contact') }">

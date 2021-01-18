@@ -2,24 +2,22 @@
   <div class="item">
     <div class="item-box">
       <div class="item-img">
-        <img :src="image" alt="" />
+        <img :src="getProp(product, 'image_urls[0]')" alt="" />
         <div class="item-info-in item-info-in-custom">
           <ul>
             <li>
-              <a href="#"><i class="ti-shopping-cart"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ti-eye"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ti-heart"></i></a>
+              <a href="#" @click="detailProduct(getProp(product, 'slug'))"
+                ><i class="ti-eye"></i
+              ></a>
             </li>
           </ul>
         </div>
       </div>
       <div class="item-info text-center text-black p-a10">
         <h6 class="item-title text-uppercase font-weight-500">
-          <a href="#">{{ name }}</a>
+          <a href="#" @click="detailProduct(getProp(product, 'slug'))">{{
+            getProp(product, 'name')
+          }}</a>
         </h6>
         <ul class="item-review">
           <li><i class="fa fa-star"></i></li>
@@ -37,16 +35,25 @@
 </template>
 
 <script>
+import { CommonMixin } from '@/shared/mixins/CommonMixin'
+
 export default {
   name: 'ProductItemLarge',
+  mixins: [CommonMixin],
   props: {
-    name: {
+    slug: {
       type: String,
       required: true,
     },
-    image: {
-      type: String,
-      required: true,
+  },
+  computed: {
+    product() {
+      return this.$store.state.product.data[this.slug]
+    },
+  },
+  methods: {
+    detailProduct(slug) {
+      this.$router.push({ name: 'san-pham-slug', params: { slug } })
     },
   },
 }

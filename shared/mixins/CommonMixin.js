@@ -51,7 +51,7 @@ export const CommonMixin = {
   methods: {
     getProp: get,
     isMatchRoute(path) {
-      return this.$route.path === path
+      return this.$route.fullPath === path
     },
     slugToCategory(slug) {
       return Object.values(this.$store.state.category.data).find(
