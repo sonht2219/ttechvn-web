@@ -7,6 +7,8 @@ export default (ctx, inject) => {
     categories: initRepository('categories'),
     tags: initRepository('tags'),
     articles: initRepository('articles'),
+    banners: initRepository('banners'),
+    contactMessages: initRepository('contact-messages'),
   }
 
   inject('repositories', repositories)

@@ -3,33 +3,20 @@
     <!-- inner page banner -->
     <div>
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227748.3825624477!2d75.65046970649679!3d26.88544791796718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c4adf4c57e281%3A0xce1c63a0cf22e09!2sJaipur%2C+Rajasthan!5e0!3m2!1sen!2sin!4v1500819483219"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.36888875089!2d105.80578351493511!3d21.177499985917944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDEwJzM5LjAiTiAxMDXCsDQ4JzI4LjciRQ!5e0!3m2!1svi!2s!4v1610994878188!5m2!1svi!2s"
         style="border: 0; width: 100%; margin-bottom: -6px; height: 300px"
         allowfullscreen
       ></iframe>
     </div>
     <!-- inner page banner END -->
-    <!-- Breadcrumb row -->
-    <div class="breadcrumb-row">
-      <div class="container">
-        <ul class="list-inline">
-          <li><a href="#">Home</a></li>
-          <li>Contact us</li>
-        </ul>
-      </div>
-    </div>
-    <!-- Breadcrumb row END -->
     <div class="section-full content-inner bg-white contact-style-1">
       <div class="container">
         <div class="row">
           <!-- right part start -->
           <div class="col-lg-4 col-md-6 d-md-flex d-lg-flex">
             <div class="p-a30 m-b30 border contact-area border-1">
-              <h2 class="m-b10">Quick Contact</h2>
-              <p>
-                If you have any questions simply use the following contact
-                details.
-              </p>
+              <h2 class="m-b10">Liên hệ</h2>
+              <p>Hãy liên hệ với chúng tôi theo thông tin dưới đây</p>
               <ul class="no-margin">
                 <li class="icon-bx-wraper left m-b30">
                   <div class="icon-bx-xs border-1">
@@ -38,7 +25,7 @@
                     ></a>
                   </div>
                   <div class="icon-content">
-                    <h6 class="text-uppercase m-tb0 dlab-tilte">Address:</h6>
+                    <h6 class="text-uppercase m-tb0 dlab-tilte">Địa chỉ:</h6>
                     <p>123 West Street, Melbourne Victoria 3000 Australia</p>
                   </div>
                 </li>
@@ -56,7 +43,7 @@
                     <a href="#" class="icon-cell"><i class="ti-mobile"></i></a>
                   </div>
                   <div class="icon-content">
-                    <h6 class="text-uppercase m-tb0 dlab-tilte">PHONE</h6>
+                    <h6 class="text-uppercase m-tb0 dlab-tilte">Điện thoại</h6>
                     <p>+61 3 8376 6284</p>
                   </div>
                 </li>
@@ -101,20 +88,21 @@
           <!-- Left part start -->
           <div class="col-lg-8 col-md-6">
             <div class="p-a30 bg-gray clearfix m-b30">
-              <h2>Send Message Us</h2>
+              <h2>Gửi thư tới chúng tôi</h2>
               <div class="dzFormMsg"></div>
-              <form method="post" class="dzForm" action="script/contact.php">
+              <form class="dzForm">
                 <input type="hidden" value="Contact" name="dzToDo" />
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group">
                       <div class="input-group">
                         <input
-                          name="dzName"
+                          v-model="contact.name"
+                          name="dzOther[Name]"
                           type="text"
                           required
                           class="form-control"
-                          placeholder="Your Name"
+                          placeholder="Họ tên"
                         />
                       </div>
                     </div>
@@ -123,11 +111,12 @@
                     <div class="form-group">
                       <div class="input-group">
                         <input
-                          name="dzEmail"
+                          v-model="contact.email"
+                          name="dzOther[Email]"
                           type="email"
-                          class="form-control"
                           required
-                          placeholder="Your Email Address"
+                          class="form-control"
+                          placeholder="Email"
                         />
                       </div>
                     </div>
@@ -136,11 +125,12 @@
                     <div class="form-group">
                       <div class="input-group">
                         <input
+                          v-model="contact.phone_number"
                           name="dzOther[Phone]"
                           type="text"
                           required
                           class="form-control"
-                          placeholder="Phone"
+                          placeholder="Số điện thoại"
                         />
                       </div>
                     </div>
@@ -149,11 +139,12 @@
                     <div class="form-group">
                       <div class="input-group">
                         <input
+                          v-model="contact.subject"
                           name="dzOther[Subject]"
                           type="text"
                           required
                           class="form-control"
-                          placeholder="Subject"
+                          placeholder="Tiêu đề"
                         />
                       </div>
                     </div>
@@ -162,11 +153,12 @@
                     <div class="form-group">
                       <div class="input-group">
                         <textarea
+                          v-model="contact.message"
                           name="dzMessage"
                           rows="4"
                           class="form-control"
                           required
-                          placeholder="Your Message..."
+                          placeholder="Nội dung..."
                         ></textarea>
                       </div>
                     </div>
@@ -191,13 +183,8 @@
                     </div>
                   </div>
                   <div class="col-lg-12">
-                    <button
-                      name="submit"
-                      type="submit"
-                      value="Submit"
-                      class="site-button"
-                    >
-                      <span>Submit</span>
+                    <button name="submit" class="site-button" @click="submit">
+                      <span>GỬI</span>
                     </button>
                   </div>
                 </div>
@@ -212,8 +199,37 @@
 </template>
 
 <script>
+const contact = {
+  name: '',
+  email: '',
+  phone_number: '',
+  subject: '',
+  message: '',
+}
+
 export default {
   name: 'Contact',
+  data: () => ({
+    contact: { ...contact },
+  }),
+  methods: {
+    async submit() {
+      if (!this.isValidForm()) return
+      try {
+        await this.$repositories.contactMessages.create(this.contact)
+        this.contact = { ...contact }
+      } catch (e) {}
+    },
+    isValidForm() {
+      if (
+        !this.contact.phone_number ||
+        !this.contact.subject ||
+        !this.contact.message
+      )
+        return false
+      return true
+    },
+  },
 }
 </script>
 

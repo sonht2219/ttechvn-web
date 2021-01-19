@@ -5,4 +5,7 @@ export default ($axios) => (resource) => ({
   single(id) {
     return $axios.get(`${resource}/${id}`)
   },
+  create(data) {
+    return $axios.post(`${resource}`, data)
+  },
 })

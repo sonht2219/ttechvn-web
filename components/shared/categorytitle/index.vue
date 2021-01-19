@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="`/danh-muc/${category.slug}`">{{
+  <NuxtLink :to="`/san-pham?category=${category.slug}`">{{
     getProp(category, 'name')
   }}</NuxtLink>
 </template>
@@ -11,14 +11,14 @@ export default {
   name: 'CategoryTitle',
   mixins: [CommonMixin],
   props: {
-    id: {
-      type: Number,
+    slug: {
+      type: String,
       required: true,
     },
   },
   computed: {
     category() {
-      return this.$store.state.category.data[this.id]
+      return this.$store.state.category.data[this.slug]
     },
   },
 }

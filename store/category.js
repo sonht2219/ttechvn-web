@@ -6,52 +6,58 @@ import union from 'lodash/union'
 export const MAP_CATEGORY = 'MAP_CATEGORY'
 
 export const state = () => ({
-  ids: [],
+  slugs: [],
   data: {},
-  idByType: {},
+  slugByType: {},
 })
 
 export const getters = {
   listIdsTypeArticle: (state) => {
-    return state.idByType[CategoryType.Article]
+    return state.slugByType[CategoryType.Article]
   },
   listIdsTypeProduct: (state) => {
-    return state.idByType[CategoryType.Product]
+    return state.slugByType[CategoryType.Product]
   },
   listIdsChildrenTypeProduct: (state) => {
     let result = []
-    state.idByType[CategoryType.Product]?.forEach((id) => {
+    state.slugByType[CategoryType.Product]?.forEach((slug) => {
       result = union(
         result,
-        flattenChildren(state.data[id]).map((child) => child.id)
+        flattenChildren(state.data[slug]).map((child) => child.slug)
       )
     })
     return result
   },
   listAllIds: (state) => {
-    return state.ids
+    return state.slugs
   },
   listTypeArticle: (state) => {
-    return state.idByType[CategoryType.Article]?.map((id) => state.data[id])
+    return state.slugByType[CategoryType.Article]?.map(
+      (slug) => state.data[slug]
+    )
   },
   listTypeProduct: (state) => {
-    return state.idByType[CategoryType.Product]?.map((id) => state.data[id])
+    return state.slugByType[CategoryType.Product]?.map(
+      (slug) => state.data[slug]
+    )
   },
 }
 
 export const mutations = {
   [MAP_CATEGORY](state, payload) {
     const mapper = {}
-    state.ids = payload?.datas
+    state.slugs = payload?.datas
       ?.filter((category) => category.status === CommonStatus.Active)
       ?.map((category) => {
-        mapper[category.id] = category
-        flattenChildren(category).forEach((child) => (mapper[child.id] = child))
-        state.idByType[category.type] = [
-          ...(state.idByType[category.type] || []),
-          category.id,
+        mapper[category.slug] = category
+        flattenChildren(category).forEach(
+          (child) => (mapper[child.slug] = child)
+        )
+        state.slugByType[category.type] = [
+          ...(state.slugByType[category.type] || []),
+          category.slug,
         ]
-        return category.id
+        return category.slug
       })
     state.data = mapper
   },

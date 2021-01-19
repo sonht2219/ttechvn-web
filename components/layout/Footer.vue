@@ -33,7 +33,7 @@
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6 footer-col-4">
             <div class="widget recent-posts-entry">
-              <h4 class="m-b15 text-uppercase">Tin tức</h4>
+              <h4 class="m-b15 text-uppercase">Bài viết</h4>
               <div class="dlab-separator-outer m-b10">
                 <div class="dlab-separator bg-white style-skew"></div>
               </div>
@@ -46,25 +46,18 @@
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6 footer-col-4">
             <div class="widget widget_services">
-              <h4 class="m-b15 text-uppercase">Dịch vụ</h4>
+              <h4 class="m-b15 text-uppercase">Danh mục</h4>
               <div class="dlab-separator-outer m-b10">
                 <div class="dlab-separator bg-white style-skew"></div>
               </div>
               <ul>
-                <li>
-                  <a href="engine-diagnostics.html">Engine Diagnostics</a>
-                </li>
-                <li>
-                  <a href="lube-oil-and-filters.html">Lube, Oil and Filters</a>
-                </li>
-                <li><a href="belts-and-hoses.html">Belts and Hoses</a></li>
-                <li>
-                  <a href="air-conditioning.html">Air Conditioning</a>
-                </li>
-                <li><a href="brake-repair.html">Brake Repair</a></li>
-                <li>
-                  <a href="tire-and-wheel-services.html">Tire And Wheel</a>
-                </li>
+                <template v-for="(category, i) in listCategoryProduct">
+                  <li :key="i">
+                    <nuxt-link :to="`/san-pham?category=${category.slug}`">{{
+                      getProp(category, 'name')
+                    }}</nuxt-link>
+                  </li>
+                </template>
               </ul>
             </div>
           </div>
@@ -105,9 +98,10 @@
             </span>
           </div>
           <div class="col-lg-4 col-md-4 text-right">
-            <a href="about-1.html"> Giới thiệu</a>
-            <a href="faq-1.html"> Hỏi đáp</a>
-            <a href="contact.html"> Liên hệ</a>
+            <nuxt-link to="/bai-viet/gioi-thieu" href="about-1.html">
+              Giới thiệu</nuxt-link
+            >
+            <nuxt-link to="/lien-he"> Liên hệ</nuxt-link>
           </div>
         </div>
       </div>
@@ -117,13 +111,29 @@
 
 <script>
 import ArticleItemSmall from '@/components/shared/articleitemsm/index'
-import { mapState } from 'vuex'
+import { mapState, mapGetters, mapActions } from 'vuex'
+import { CommonMixin } from '@/shared/mixins/CommonMixin'
+import { ArticleParams } from '@/store/article'
 export default {
   name: 'Footer',
   components: { ArticleItemSmall },
+  mixins: [CommonMixin],
+  async fetch() {
+    if (!this.articleSlugs.length) {
+      await this.listArticle({ ...new ArticleParams(), limit: 3 })
+    }
+  },
   computed: {
     ...mapState({
       articleSlugs: (state) => state.article.slugs,
+    }),
+    ...mapGetters({
+      listCategoryProduct: 'category/listTypeProduct',
+    }),
+  },
+  methods: {
+    ...mapActions({
+      listArticle: 'article/list',
     }),
   },
 }

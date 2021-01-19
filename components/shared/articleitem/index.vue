@@ -5,13 +5,16 @@
     >
       <div class="dlab-post-media dlab-img-effect zoom-slow">
         <a href="javascript:;"
-          ><img :src="getProp(article, 'image')" alt=""
+          ><img
+            style="height: 300px"
+            :src="getProp(article, 'thumbnail_url')"
+            :alt="getProp(article, 'name')"
         /></a>
       </div>
       <div class="dlab-post-info p-t20">
         <div class="dlab-post-title">
           <h3 class="post-title">
-            <a href="javascript:;">{{ getProp(article, 'title') }}</a>
+            <a href="javascript:;">{{ getProp(article, 'name') }}</a>
           </h3>
         </div>
         <div class="dlab-post-meta">
@@ -46,9 +49,14 @@ export default {
   name: 'ArticleItem',
   mixins: [CommonMixin],
   props: {
-    article: {
-      type: Object,
+    slug: {
+      type: String,
       required: true,
+    },
+  },
+  computed: {
+    article() {
+      return this.$store.state.article.data[this.slug]
     },
   },
 }

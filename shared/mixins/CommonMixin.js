@@ -1,4 +1,6 @@
 import get from 'lodash/get'
+import { flattenChildren } from '@/shared/helper/helper'
+import { CategoryType } from '@/shared/enums/type'
 export const CommonMixin = {
   data: () => ({
     productServices: [
@@ -103,6 +105,16 @@ export const CommonMixin = {
           },
         ],
       }
+    },
+    getProductCategoryIdSameType(slug) {
+      const category = this.$store.state.category.data[slug]
+      const parent = category?.parent
+      if (parent) {
+        return flattenChildren(
+          this.$store.state.category.data[parent?.slug]
+        ).map((child) => child.slug)
+      }
+      return this.$store.state.category.slugByType[CategoryType.Product]
     },
   },
 }

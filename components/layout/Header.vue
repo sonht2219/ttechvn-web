@@ -132,8 +132,8 @@
                   }}</nuxt-link>
                 </li>
               </template>
-              <li :class="{ active: isMatchRoute('/contact') }">
-                <nuxt-link to="/contact">Liên hệ</nuxt-link>
+              <li :class="{ active: isMatchRoute('/lien-he') }">
+                <nuxt-link to="/lien-he">Liên hệ</nuxt-link>
               </li>
             </ul>
           </div>

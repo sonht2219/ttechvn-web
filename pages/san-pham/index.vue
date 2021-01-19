@@ -16,13 +16,18 @@
             <div class="widget bg-white widget_services">
               <h4 class="widget-title">Danh mục</h4>
               <ul>
-                <li v-for="categoryId in listIdsCategory" :key="categoryId">
-                  <category-title :id="categoryId" />
+                <li
+                  v-for="slugSame in getProductCategoryIdSameType(
+                    $route.params.slug
+                  )"
+                  :key="slugSame"
+                >
+                  <category-title :slug="slugSame" />
                 </li>
               </ul>
             </div>
             <div class="widget bg-white recent-posts-entry">
-              <h4 class="widget-title">Tin tức</h4>
+              <h4 class="widget-title">Bài viết</h4>
               <div class="widget-post-bx">
                 <template v-for="(slug, i) in articleSlugs">
                   <article-item-small :key="`article-${i}`" :slug="slug" />
@@ -102,12 +107,78 @@ export default {
   async fetch() {
     await this.loadProduct({
       ...this.params,
-      category: this.$route.query.category,
+      category: this.slug,
     })
   },
   data: () => ({
     page: 1,
   }),
+  head() {
+    return {
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.title,
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: `${this.slug}, t-tech`,
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `${this.title} - Công ty TNHH TTECH`,
+        },
+        {
+          hid: 'og:type',
+          property: 'og:type',
+          content: `website`,
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: `${this.url}`,
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: `${this.url}`,
+        },
+        {
+          hid: 'og:site_name',
+          property: 'og:site_name',
+          content: `Công ty TNHH TTECH`,
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: `Công ty TNHH TTECH`,
+        },
+        {
+          hid: 'twitter:card',
+          name: 'twitter:card',
+          content: `summary`,
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: `${this.title} - Công ty TNHH TECH`,
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: `Công ty TNHH TTECH`,
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: `image`,
+        },
+      ],
+    }
+  },
   computed: {
     ...mapState({
       productSlugs: (state) => state.product.slugs,
@@ -120,7 +191,13 @@ export default {
       listIdsCategory: 'category/listIdsChildrenTypeProduct',
     }),
     title() {
-      return this.slugToCategory(this.$route.query.category)?.name
+      return this.slugToCategory(this.slug)?.name
+    },
+    url() {
+      return this.$route.fullPath
+    },
+    slug() {
+      return this.$route.query.category
     },
     pagination: {
       set(val) {
