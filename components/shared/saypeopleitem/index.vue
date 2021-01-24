@@ -16,7 +16,7 @@
       </div>
       <div class="testimonial-detail">
         <strong class="testimonial-name">{{
-          getProp(sayPeople, 'people')
+          getProp(sayPeople, 'author')
         }}</strong>
         <span class="testimonial-position">{{
           getProp(sayPeople, 'job')
