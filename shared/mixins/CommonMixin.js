@@ -20,35 +20,6 @@ export const CommonMixin = {
         description: 'Bảo hành lên đến 36 tháng',
       },
     ],
-    sayPeoples: [
-      {
-        image: 'images/testimonials/pic1-img.jpg',
-        content:
-          'There are many variations of passages of Lorem Ipsum\n' +
-          '                    typesetting industry has been the standard dummy text ever\n' +
-          '                    since the when printer.',
-        people: 'Hoàng Sơn',
-        job: 'Giám đốc',
-      },
-      {
-        image: 'images/testimonials/pic1-img.jpg',
-        content:
-          'There are many variations of passages of Lorem Ipsum\n' +
-          '                    typesetting industry has been the standard dummy text ever\n' +
-          '                    since the when printer.',
-        people: 'Hoàng Sơn',
-        job: 'Giám đốc',
-      },
-      {
-        image: 'images/testimonials/pic1-img.jpg',
-        content:
-          'There are many variations of passages of Lorem Ipsum\n' +
-          '                    typesetting industry has been the standard dummy text ever\n' +
-          '                    since the when printer.',
-        people: 'Hoàng Sơn',
-        job: 'Giám đốc',
-      },
-    ],
   }),
   methods: {
     getProp: get,

@@ -239,54 +239,27 @@
     <article-home />
     <!-- Latest blog END -->
     <!-- Testimonials blog -->
-    <div
-      class="section-full overlay-black-middle bg-img-fix content-inner-1"
-      style="background-image: url(images/background/bg2-img.jpg)"
-    >
-      <div class="container">
-        <div class="section-head text-white text-center">
-          <h2 class="text-uppercase">Mọi người nói về chúng tôi</h2>
-          <div class="dlab-separator-outer">
-            <div class="dlab-separator bg-white style-skew"></div>
-          </div>
-        </div>
-        <div class="section-content">
-          <VueSlickCarousel
-            v-if="sayPeoples.length"
-            v-bind="
-              vueSlickMultipleSlideSetting(false, false, true, 2, 2, 1, 1)
-            "
-            class="testimonial-four owl-carousel owl-none owl-theme owl-dots-white-full"
-          >
-            <say-people-item
-              v-for="(saypeople, i) in sayPeoples"
-              :key="i"
-              :say-people="saypeople"
-            />
-          </VueSlickCarousel>
-        </div>
-      </div>
-    </div>
+    <testimonial />
     <!-- Testimonials blog END -->
   </div>
 </template>
 
 <script>
 import { CommonMixin } from '@/shared/mixins/CommonMixin'
-import SayPeopleItem from '@/components/shared/saypeopleitem/index'
 import Banner from '@/components/home/banner/index'
 import AboutHome from '@/components/home/about/index'
 import ProductHome from '@/components/home/product/index'
 import ArticleHome from '@/components/home/article/index'
+import Testimonial from '@/components/home/testimonial/index'
 
 export default {
   name: 'HomePage',
   components: {
+    Testimonial,
     ArticleHome,
     ProductHome,
     AboutHome,
     Banner,
-    SayPeopleItem,
   },
   mixins: [CommonMixin],
 }
