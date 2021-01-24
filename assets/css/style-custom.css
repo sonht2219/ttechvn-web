@@ -151,6 +151,21 @@ table td p {
   display: inline-block;
 }
 
+/*product*/
+.img-prod-slide {
+  height: 500px;
+  object-fit: cover;
+}
+.img-prod-down-slide {
+  height: 150px !important;
+  object-fit: cover;
+}
+
+.img-prod-lg {
+  height: 290px;
+  object-fit: cover;
+}
+
 /* Safari */
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }

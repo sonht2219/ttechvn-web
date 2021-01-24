@@ -2,11 +2,17 @@
   <div class="item">
     <div class="item-box">
       <div class="item-img">
-        <img :src="getProp(product, 'image_urls[0]')" alt="" />
+        <img
+          :src="getProp(product, 'image_urls[0]')"
+          alt=""
+          class="img-prod-lg"
+        />
         <div class="item-info-in item-info-in-custom">
           <ul>
             <li>
-              <a href="#" @click="detailProduct(getProp(product, 'slug'))"
+              <a
+                href="javascript:void(0)"
+                @click="detailProduct(getProp(product, 'slug'))"
                 ><i class="ti-eye"></i
               ></a>
             </li>

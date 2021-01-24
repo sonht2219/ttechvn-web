@@ -30,7 +30,11 @@
               <h4 class="widget-title">Bài viết</h4>
               <div class="widget-post-bx">
                 <template v-for="(slug, i) in articleSlugs">
-                  <article-item-small :key="`article-${i}`" :slug="slug" />
+                  <article-item-small
+                    v-if="i < 5"
+                    :key="`article-${i}`"
+                    :slug="slug"
+                  />
                 </template>
               </div>
             </div>
@@ -94,6 +98,7 @@ import { SeoMixin } from '@/shared/mixins/SeoMixin'
 
 export default {
   name: 'ProductList',
+  watchQuery: true,
   components: {
     Tags,
     SearchBox,

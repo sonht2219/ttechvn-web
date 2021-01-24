@@ -37,13 +37,15 @@
                     <div class="mfp-gallery">
                       <div class="dlab-box">
                         <div class="dlab-thum-bx dlab-img-overlay1">
-                          <img :src="img" alt="" class="w-100" />
+                          <img :src="img" alt="" class="w-100 img-prod-slide" />
                           <div class="overlay-bx">
                             <div class="overlay-icon overlay-icon-custom">
                               <a
                                 class="mfp-link"
                                 :title="getProp(product, 'name')"
                                 :href="img"
+                                target="_blank"
+                                rel="noopener"
                               >
                                 <i class="ti-fullscreen"></i>
                               </a>
@@ -78,7 +80,7 @@
                 >
                   <div :key="`img-thumb-${i}`" class="item">
                     <div class="dlab-media dlab-media-custom">
-                      <img :src="img" alt="" />
+                      <img :src="img" alt="" class="img-prod-down-slide" />
                     </div>
                   </div>
                 </template>

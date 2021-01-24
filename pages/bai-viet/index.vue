@@ -18,6 +18,7 @@
                 <div class="widget-post-bx">
                   <template v-for="(slug, i) in slugs">
                     <article-item-small
+                      v-if="i < 5"
                       :key="`article-other-${i}`"
                       :slug="slug"
                     />
