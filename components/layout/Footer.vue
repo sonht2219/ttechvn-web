@@ -22,7 +22,11 @@
               </div>
               <div class="widget-post-bx">
                 <template v-for="(slug, i) in articleSlugs">
-                  <article-item-small :key="`article-${i}`" :slug="slug" />
+                  <article-item-small
+                    v-if="i < 3"
+                    :key="`article-${i}`"
+                    :slug="slug"
+                  />
                 </template>
               </div>
             </div>
