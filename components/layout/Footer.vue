@@ -6,7 +6,7 @@
           <div class="col-lg-3 col-md-6 col-sm-6 footer-col-4">
             <div class="widget widget_about">
               <div class="logo-footer">
-                <img src="/images/logo.png" alt="" />
+                <img src="@/assets/images/logo.png" alt="" />
               </div>
               <p class="intro-text-footer">
                 {{ getProp(aboutUsHome, 'intro') }}

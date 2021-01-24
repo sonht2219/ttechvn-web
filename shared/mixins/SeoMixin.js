@@ -70,7 +70,7 @@ export const SeoMixin = {
       return `${this.domainApp}${this.$route.fullPath}`
     },
     imageLink() {
-      return this.domainApp + '/icon.jpg'
+      return this.domainApp + '/logo.png'
     },
     domainApp() {
       return process.env.VUE_APP_DOMAIN

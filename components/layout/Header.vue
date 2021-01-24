@@ -52,7 +52,11 @@
           <!-- website logo -->
           <div class="logo-header mostion">
             <nuxt-link to="/"
-              ><img src="/images/logo.png" width="193" height="89" alt=""
+              ><img
+                src="@/assets/images/logo.png"
+                width="200"
+                height="95"
+                alt=""
             /></nuxt-link>
           </div>
           <!-- nav toggle button -->

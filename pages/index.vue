@@ -251,6 +251,7 @@ import AboutHome from '@/components/home/about/index'
 import ProductHome from '@/components/home/product/index'
 import ArticleHome from '@/components/home/article/index'
 import Testimonial from '@/components/home/testimonial/index'
+import { SeoMixin } from '@/shared/mixins/SeoMixin'
 
 export default {
   name: 'HomePage',
@@ -261,7 +262,7 @@ export default {
     AboutHome,
     Banner,
   },
-  mixins: [CommonMixin],
+  mixins: [CommonMixin, SeoMixin],
 }
 </script>
 
