@@ -8,6 +8,12 @@
           <div class="dlab-topbar-right">
             <ul class="social-bx list-inline pull-right">
               <li>
+                <i class="fa fa-phone text-primary"></i>
+                <strong style="margin-right: 40px">
+                  Hotline: {{ getProp(contact, 'phone_number') }}
+                </strong>
+              </li>
+              <li>
                 <a
                   :href="getProp(contact, 'facebook')"
                   target="_blank"

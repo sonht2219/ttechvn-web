@@ -252,7 +252,8 @@ import ProductHome from '@/components/home/product/index'
 import ArticleHome from '@/components/home/article/index'
 import Testimonial from '@/components/home/testimonial/index'
 import { SeoMixin } from '@/shared/mixins/SeoMixin'
-
+import { mapGetters } from 'vuex'
+import { APP_NAME } from '@/store'
 export default {
   name: 'HomePage',
   components: {
@@ -263,6 +264,14 @@ export default {
     Banner,
   },
   mixins: [CommonMixin, SeoMixin],
+  computed: {
+    ...mapGetters({
+      appName: APP_NAME,
+    }),
+    title() {
+      return this.appName
+    },
+  },
 }
 </script>
 

@@ -1,6 +1,7 @@
 export const SeoMixin = {
   head() {
     return {
+      title: this.title,
       meta: [
         {
           hid: 'description',
