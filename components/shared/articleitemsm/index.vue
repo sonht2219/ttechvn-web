@@ -11,15 +11,20 @@
     <div class="dlab-post-info">
       <div class="dlab-post-header">
         <h6 class="post-title">
-          <a href="#" @click="detail(getProp(article, 'slug'))">{{
-            getProp(article, 'name')
-          }}</a>
+          <a
+            href="javascript:void(0)"
+            @click="detail(getProp(article, 'slug'))"
+            >{{ getProp(article, 'name') }}</a
+          >
         </h6>
       </div>
       <div class="dlab-post-meta">
         <ul>
           <li class="post-author">
-            By <a href="#">{{ getProp(article, 'created_by.name') }}</a>
+            By
+            <a href="javascript:void(0)">{{
+              getProp(article, 'created_by.name')
+            }}</a>
           </li>
         </ul>
       </div>

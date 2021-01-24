@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- inner page banner -->
-    <inner-banner v-bind="{ title: getProp(article, 'name') }" />
+    <inner-banner v-bind="{ title: title }" />
     <!-- inner page banner END -->
     <!-- contact area -->
     <div class="content-area">
@@ -36,16 +36,24 @@
 import InnerBanner from '@/components/shared/innerbanner/index'
 import { CommonMixin } from '@/shared/mixins/CommonMixin'
 import { mapActions } from 'vuex'
+import { SeoMixin } from '@/shared/mixins/SeoMixin'
 export default {
   name: 'ArticleDetail',
   components: { InnerBanner },
-  mixins: [CommonMixin],
+  mixins: [CommonMixin, SeoMixin],
   async fetch() {
-    await this.loadSingleArticle(this.$route.params.slug)
+    try {
+      await this.loadSingleArticle(this.$route.params.slug)
+    } catch (e) {
+      this.throwError('error')
+    }
   },
   computed: {
     article() {
       return this.$store.state.article.data[this.$route.params.slug]
+    },
+    title() {
+      return this.getProp(this.article, 'name')
     },
   },
   methods: {
@@ -53,9 +61,7 @@ export default {
       singleArticle: 'article/single',
     }),
     async loadSingleArticle(slug) {
-      try {
-        await this.singleArticle(slug)
-      } catch (e) {}
+      await this.singleArticle(slug)
     },
   },
 }

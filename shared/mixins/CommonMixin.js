@@ -116,5 +116,8 @@ export const CommonMixin = {
       }
       return this.$store.state.category.slugByType[CategoryType.Product]
     },
+    throwError(e) {
+      this.$nuxt.context.error(e)
+    },
   },
 }

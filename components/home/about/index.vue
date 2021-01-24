@@ -10,63 +10,33 @@
             <span class="text-secondry font-16">Sứ mệnh Tiên phong</span>
             <div class="clear"></div>
           </div>
-          <p class="m-b30">
-            Công ty T-Tech là một trong những đơn vị đã sản xuất, sửa chữa xe
-            chữa cháy với chất lượng và uy tín cao, được các khách hàng ghi
-            nhận. Với khả năng làm chủ hoàn toàn các công nghệ mới nên sản phẩm
-            được thiết kế và sản xuất phù hợp, ổn định, thân thiện, hiểu quả với
-            người sử dụng. Cùng với tỷ lệ nội địa hóa cao, giá thành cạnh tranh,
-            dịch vụ bảo trì, bảo dưỡng trọn đời. sẽ là sự lựa chọn phù hợp, hiệu
-            quả cho quý khách hàng. Để được phục vụ xin hãy liên hệ với chúng
-            tôi
-          </p>
+          <p class="m-b30">{{ getProp(aboutUsHome, 'intro') }}</p>
           <div class="row">
-            <div class="col-md-4 col-lg-4 col-sm-4 m-b15">
-              <div class="icon-bx-wraper bx-style-1 p-tb15 p-lr10 center">
-                <div class="icon-bx-sm radius bg-primary m-b5">
-                  <a href="#" class="icon-cell"><i class="ti-user"></i></a>
-                </div>
-                <div class="icon-content">
-                  <h2 class="text-primary m-t20 m-b10">
-                    <span class="counter">1800</span>+
-                  </h2>
-                  <p>Kỹ sư</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-sm-4 m-b15">
-              <div class="icon-bx-wraper bx-style-1 p-tb15 p-lr10 center">
-                <div class="icon-bx-sm radius bg-primary m-b5">
-                  <a href="#" class="icon-cell"><i class="ti-home"></i></a>
-                </div>
-                <div class="icon-content">
-                  <h2 class="text-primary m-t20 m-b10">
-                    <span class="counter">2</span>+
-                  </h2>
-                  <p>Nhà máy</p>
+            <template v-for="(item, i) in getProp(aboutUsHome, 'info')">
+              <div :key="i" class="col-md-4 col-lg-4 col-sm-4 m-b15">
+                <div class="icon-bx-wraper bx-style-1 p-tb15 p-lr10 center">
+                  <div class="icon-bx-sm radius bg-primary m-b5">
+                    <a href="#" class="icon-cell"
+                      ><i :class="getProp(item, 'icon')"></i
+                    ></a>
+                  </div>
+                  <div class="icon-content">
+                    <h2 class="text-primary m-t20 m-b10">
+                      <span class="counter">{{ getProp(item, 'value') }}</span
+                      >+
+                    </h2>
+                    <p>{{ getProp(item, 'title') }}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-sm-4 m-b15">
-              <div class="icon-bx-wraper bx-style-1 p-tb15 p-lr10 center">
-                <div class="icon-bx-sm radius bg-primary m-b5">
-                  <a href="#" class="icon-cell"
-                    ><i class="ti-harddrives"></i
-                  ></a>
-                </div>
-                <div class="icon-content">
-                  <h2 class="text-primary m-t20 m-b10">
-                    <span class="counter">1527</span>+
-                  </h2>
-                  <p>Dự án</p>
-                </div>
-              </div>
-            </div>
+            </template>
           </div>
-          <a href="#" class="site-button">Xem thêm</a>
+          <nuxt-link to="/bai-viet/gioi-thieu" class="site-button"
+            >Xem thêm</nuxt-link
+          >
         </div>
         <div class="col-lg-5 about-img">
-          <img src="images/ah-home.png" alt="" />
+          <img :src="`images/${getProp(aboutUsHome, 'images')}`" alt="" />
         </div>
       </div>
     </div>
@@ -74,8 +44,17 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import { ABOUT_US_HOME } from '@/store'
+import { CommonMixin } from '@/shared/mixins/CommonMixin'
 export default {
   name: 'AboutHome',
+  mixins: [CommonMixin],
+  computed: {
+    ...mapGetters({
+      aboutUsHome: ABOUT_US_HOME,
+    }),
+  },
 }
 </script>
 

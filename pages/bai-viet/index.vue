@@ -59,9 +59,11 @@ import Tags from '@/components/shared/tags/index'
 import SearchBox from '@/components/shared/searchbox/index'
 import InnerBanner from '@/components/shared/innerbanner/index'
 import ArticleItemSmall from '@/components/shared/articleitemsm/index'
+import { SeoMixin } from '@/shared/mixins/SeoMixin'
 
 export default {
   name: 'ArticleList',
+  watchQuery: true,
   components: {
     ArticleItemSmall,
     InnerBanner,
@@ -70,12 +72,16 @@ export default {
     PaginationCustom,
     ArticleItemSH,
   },
-  mixins: [CommonMixin],
+  mixins: [CommonMixin, SeoMixin],
   async fetch() {
-    await this.loadListArticle({
-      ...new ArticleParams(),
-      category: this.$route.query.category,
-    })
+    try {
+      await this.loadListArticle({
+        ...new ArticleParams(),
+        category: this.$route.query.category,
+      })
+    } catch (e) {
+      this.throwError('error')
+    }
   },
   computed: {
     ...mapState({

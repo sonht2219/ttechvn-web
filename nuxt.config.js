@@ -1,17 +1,21 @@
 export default {
+  loading: '~/components/shared/loading/index.vue',
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'T-TECH',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: '/css/style.css' },
       { rel: 'stylesheet', href: '/css/templete.css' },
       { rel: 'stylesheet', href: '/css/skin-1.css' },
+    ],
+    script: [
+      { src: '/plugins/bootstrap/js/bootstrap.min.js' },
+      { src: '/js/common.js', body: true },
     ],
   },
 

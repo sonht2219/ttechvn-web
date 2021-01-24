@@ -9,6 +9,7 @@
       </div>
       <div class="section-content">
         <VueSlickCarousel
+          v-if="slugs.length"
           class="blog-carousel"
           v-bind="vueSlickMultipleSlideSetting(false, false, true, 3, 2, 2, 1)"
         >

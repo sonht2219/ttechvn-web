@@ -25,16 +25,23 @@
 <script>
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import { mapActions } from 'vuex'
+import { CommonMixin } from '@/shared/mixins/CommonMixin'
 
 export default {
   components: { Footer, Header },
-  head() {
-    return {
-      script: [
-        { src: '/plugins/bootstrap/js/bootstrap.min.js' },
-        { src: '/js/common.js', body: true },
-      ],
+  mixins: [CommonMixin],
+  async fetch() {
+    try {
+      await this.getSystemConfigs()
+    } catch (e) {
+      this.throwError('error')
     }
+  },
+  methods: {
+    ...mapActions({
+      getSystemConfigs: 'getSystemConfigs',
+    }),
   },
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- inner page banner -->
-    <inner-banner v-bind="{ title: product.name }" />
+    <inner-banner v-bind="{ title: title }" />
     <!-- inner page banner END -->
     <!-- contact area -->
     <div class="section-full content-inner bg-white">
@@ -11,6 +11,7 @@
           <div class="col-lg-5 col-md-5">
             <div class="product-gallery on-show-slider">
               <VueSlickCarousel
+                v-if="getProp(product, 'image_urls', []).length"
                 ref="sync1"
                 :as-nav-for="$refs.sync2"
                 :focus-on-select="true"
@@ -56,6 +57,7 @@
               </VueSlickCarousel>
 
               <VueSlickCarousel
+                v-if="getProp(product, 'image_urls', []).length"
                 ref="sync2"
                 :as-nav-for="$refs.sync1"
                 :focus-on-select="true"
@@ -153,6 +155,7 @@
           <div class="col-lg-12">
             <h5 class="m-b20">Sản phẩm khác</h5>
             <VueSlickCarousel
+              v-if="productSlugs.length"
               v-bind="
                 vueSlickMultipleSlideSetting(false, true, false, 3, 3, 2, 1)
               "
@@ -186,6 +189,7 @@ import InnerBanner from '@/components/shared/innerbanner/index'
 import ProductItemLarge from '@/components/shared/productitemlg/index'
 import { mapActions, mapState } from 'vuex'
 import ProductServiceSmall from '@/components/shared/productservicesmall/index'
+import { SeoMixin } from '@/shared/mixins/SeoMixin'
 
 export default {
   name: 'ProductDetail',
@@ -194,13 +198,17 @@ export default {
     ProductItemLarge,
     InnerBanner,
   },
-  mixins: [CommonMixin],
+  mixins: [CommonMixin, SeoMixin],
   async fetch() {
-    await this.loadSingleProduct(this.$route.params.slug)
-    await this.loadListProduct({
-      ...this.params,
-      category: this.product?.category?.slug,
-    })
+    try {
+      await this.loadSingleProduct(this.slug)
+      await this.loadListProduct({
+        ...this.params,
+        category: this.product?.category?.slug,
+      })
+    } catch (e) {
+      this.throwError('error')
+    }
   },
   data: () => ({
     show: 1,
@@ -213,6 +221,15 @@ export default {
     product() {
       return this.$store.state.product.data[this.$route.params.slug]
     },
+    imageLink() {
+      return this.getProp(this.product, 'image_urls[0]')
+    },
+    title() {
+      return this.getProp(this.product, 'name', '')
+    },
+    slug() {
+      return this.$route.params.slug
+    },
   },
   mounted() {
     this.show = 4
@@ -223,14 +240,10 @@ export default {
       listProduct: 'product/list',
     }),
     async loadSingleProduct(slug) {
-      try {
-        await this.singleProduct(slug)
-      } catch (e) {}
+      await this.singleProduct(slug)
     },
     async loadListProduct(params) {
-      try {
-        await this.listProduct(params)
-      } catch (e) {}
+      await this.listProduct(params)
     },
   },
 }

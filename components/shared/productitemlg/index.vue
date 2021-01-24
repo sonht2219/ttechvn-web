@@ -15,9 +15,12 @@
       </div>
       <div class="item-info text-center text-black p-a10">
         <h6 class="item-title text-uppercase font-weight-500">
-          <a href="#" @click="detailProduct(getProp(product, 'slug'))">{{
-            getProp(product, 'name')
-          }}</a>
+          <a
+            href="javascript:void(0)"
+            @click="detailProduct(getProp(product, 'slug'))"
+          >
+            {{ getProp(product, 'name') }}
+          </a>
         </h6>
         <ul class="item-review">
           <li><i class="fa fa-star"></i></li>

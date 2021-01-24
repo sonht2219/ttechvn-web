@@ -1,16 +1,16 @@
 <template>
   <div class="blog-post blog-md clearfix date-style-2">
     <div class="dlab-post-media dlab-img-effect zoom-slow">
-      <a href="#" @click="detail(getProp(article, 'slug'))"
+      <a href="javascript:void(0)" @click="detail(getProp(article, 'slug'))"
         ><img :src="getProp(article, 'thumbnail_url')" alt=""
       /></a>
     </div>
     <div class="dlab-post-info">
       <div class="dlab-post-title">
         <h3 class="post-title">
-          <a href="#" @click="detail(getProp(article, 'slug'))">{{
-            getProp(article, 'name')
-          }}</a>
+          <a href="javascript:void(0)" @click="detail(getProp(article, 'slug'))"
+            >{{ getProp(article, 'name') }}
+          </a>
         </h3>
       </div>
       <div class="dlab-post-meta">
@@ -24,7 +24,7 @@
             <a href="#">{{ getProp(article, 'created_by.name') }}</a>
           </li>
           <li class="post-comment">
-            <i class="fa fa-comments-o"></i> <a href="#">10</a>
+            <i class="fa fa-comments-o"></i> <a href="javascript:void(0)">10</a>
           </li>
         </ul>
       </div>
@@ -44,7 +44,9 @@
       <div class="dlab-post-tags">
         <div class="post-tags">
           <template v-for="(tag, i) in getProp(article, 'tags', [])">
-            <a :key="`tag-${i}`" href="#">{{ getProp(tag, 'name') }} </a>
+            <a :key="`tag-${i}`" href="javascript:void(0)">
+              {{ getProp(tag, 'name') }}
+            </a>
           </template>
         </div>
       </div>

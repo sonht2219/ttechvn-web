@@ -12,11 +12,16 @@
     </div>
     <div class="dlab-info dlab-info-custom p-a20 text-center">
       <h4 class="dlab-title dlab-tilte-custom m-t0 text-uppercase">
-        <a href="#">{{ getProp(product, 'name') }}</a>
+        <a href="javascript:void(0)" @click="detailProduct(product.slug)">
+          {{ getProp(product, 'name') }}
+        </a>
       </h4>
       <h2 class="m-b0">Giá: Liên hệ</h2>
       <div class="m-t20">
-        <a href="#" class="site-button" @click="detailProduct(product.slug)"
+        <a
+          href="javascript:void(0)"
+          class="site-button"
+          @click="detailProduct(product.slug)"
           >Chi tiết</a
         >
       </div>

@@ -9,6 +9,7 @@ export default (ctx, inject) => {
     articles: initRepository('articles'),
     banners: initRepository('banners'),
     contactMessages: initRepository('contact-messages'),
+    systemConfigs: initRepository('system-configs'),
   }
 
   inject('repositories', repositories)

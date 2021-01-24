@@ -8,27 +8,10 @@
               <div class="logo-footer">
                 <img src="/images/logo.png" alt="" />
               </div>
-              <p>
-                <strong>T-TECH </strong> là một trong những đơn vị đã sản xuất,
-                sửa chữa xe chữa cháy với chất lượng và uy tín cao, được các
-                khách hàng ghi nhận. Với khả năng làm chủ hoàn toàn các nghệ mới
-                nên sản phẩm được thiết kế và sản xuất phù hợp, ổn định, thiện,
-                hiểu quả với người sử dụng.
+              <p class="intro-text-footer">
+                {{ getProp(aboutUsHome, 'intro') }}
               </p>
-              <ul class="dlab-social-icon dez-border">
-                <li>
-                  <a class="fa fa-facebook" href="javascript:void(0);"></a>
-                </li>
-                <li>
-                  <a class="fa fa-twitter" href="javascript:void(0);"></a>
-                </li>
-                <li>
-                  <a class="fa fa-linkedin" href="javascript:void(0);"></a>
-                </li>
-                <li>
-                  <a class="fa fa-facebook" href="javascript:void(0);"></a>
-                </li>
-              </ul>
+              <socials />
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6 footer-col-4">
@@ -69,15 +52,16 @@
               </div>
               <ul>
                 <li>
-                  <i class="ti-location-pin"></i><strong>Địa chỉ</strong> demo
-                  address #8901 Marmora Road Chi Minh City, Vietnam
+                  <i class="ti-location-pin"></i><strong>Địa chỉ</strong>
+                  {{ getProp(contact, 'address') }}
                 </li>
                 <li>
-                  <i class="ti-mobile"></i
-                  ><strong>Điện thoại</strong>0800-123456 (24/7 Support Line)
+                  <i class="ti-mobile"></i><strong>Điện thoại</strong>
+                  {{ getProp(contact, 'phone_number') }}
                 </li>
                 <li>
-                  <i class="ti-email"></i><strong>Email</strong>info@demo.com
+                  <i class="ti-email"></i><strong>Email</strong>
+                  {{ getProp(contact, 'email') }}
                 </li>
               </ul>
             </div>
@@ -114,9 +98,11 @@ import ArticleItemSmall from '@/components/shared/articleitemsm/index'
 import { mapState, mapGetters, mapActions } from 'vuex'
 import { CommonMixin } from '@/shared/mixins/CommonMixin'
 import { ArticleParams } from '@/store/article'
+import { ABOUT_US_HOME, CONTACT } from '@/store'
+import Socials from '@/components/shared/socials/index'
 export default {
   name: 'Footer',
-  components: { ArticleItemSmall },
+  components: { Socials, ArticleItemSmall },
   mixins: [CommonMixin],
   async fetch() {
     if (!this.articleSlugs.length) {
@@ -129,6 +115,8 @@ export default {
     }),
     ...mapGetters({
       listCategoryProduct: 'category/listTypeProduct',
+      contact: CONTACT,
+      aboutUsHome: ABOUT_US_HOME,
     }),
   },
   methods: {

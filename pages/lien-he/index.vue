@@ -26,7 +26,7 @@
                   </div>
                   <div class="icon-content">
                     <h6 class="text-uppercase m-tb0 dlab-tilte">Địa chỉ:</h6>
-                    <p>123 West Street, Melbourne Victoria 3000 Australia</p>
+                    <p>{{ getProp(contact, 'address') }}</p>
                   </div>
                 </li>
                 <li class="icon-bx-wraper left m-b30">
@@ -35,7 +35,7 @@
                   </div>
                   <div class="icon-content">
                     <h6 class="text-uppercase m-tb0 dlab-tilte">Email:</h6>
-                    <p>info@company.com</p>
+                    <p>{{ getProp(contact, 'email') }}</p>
                   </div>
                 </li>
                 <li class="icon-bx-wraper left">
@@ -44,43 +44,12 @@
                   </div>
                   <div class="icon-content">
                     <h6 class="text-uppercase m-tb0 dlab-tilte">Điện thoại</h6>
-                    <p>+61 3 8376 6284</p>
+                    <p>{{ getProp(contact, 'phone_number') }}</p>
                   </div>
                 </li>
               </ul>
               <div class="m-t20">
-                <ul class="dlab-social-icon dez-border dlab-social-icon-lg">
-                  <li>
-                    <a
-                      href="javascript:void(0);"
-                      class="fa fa-facebook bg-primary"
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      href="javascript:void(0);"
-                      class="fa fa-twitter bg-primary"
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      href="javascript:void(0);"
-                      class="fa fa-linkedin bg-primary"
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      href="javascript:void(0);"
-                      class="fa fa-pinterest-p bg-primary"
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      href="javascript:void(0);"
-                      class="fa fa-google-plus bg-primary"
-                    ></a>
-                  </li>
-                </ul>
+                <socials size="large" />
               </div>
             </div>
           </div>
@@ -88,6 +57,14 @@
           <!-- Left part start -->
           <div class="col-lg-8 col-md-6">
             <div class="p-a30 bg-gray clearfix m-b30">
+              <template v-if="responsed">
+                <div v-show="!errorMessage" class="alert alert-success">
+                  Gửi liên hệ thành công
+                </div>
+                <div v-show="errorMessage" class="alert alert-danger">
+                  {{ errorMessage }}
+                </div>
+              </template>
               <h2>Gửi thư tới chúng tôi</h2>
               <div class="dzFormMsg"></div>
               <form class="dzForm">
@@ -97,7 +74,7 @@
                     <div class="form-group">
                       <div class="input-group">
                         <input
-                          v-model="contact.name"
+                          v-model="contactForm.name"
                           name="dzOther[Name]"
                           type="text"
                           required
@@ -111,7 +88,7 @@
                     <div class="form-group">
                       <div class="input-group">
                         <input
-                          v-model="contact.email"
+                          v-model="contactForm.email"
                           name="dzOther[Email]"
                           type="email"
                           required
@@ -125,7 +102,7 @@
                     <div class="form-group">
                       <div class="input-group">
                         <input
-                          v-model="contact.phone_number"
+                          v-model="contactForm.phone_number"
                           name="dzOther[Phone]"
                           type="text"
                           required
@@ -139,7 +116,7 @@
                     <div class="form-group">
                       <div class="input-group">
                         <input
-                          v-model="contact.subject"
+                          v-model="contactForm.subject"
                           name="dzOther[Subject]"
                           type="text"
                           required
@@ -153,7 +130,7 @@
                     <div class="form-group">
                       <div class="input-group">
                         <textarea
-                          v-model="contact.message"
+                          v-model="contactForm.message"
                           name="dzMessage"
                           rows="4"
                           class="form-control"
@@ -183,8 +160,14 @@
                     </div>
                   </div>
                   <div class="col-lg-12">
-                    <button name="submit" class="site-button" @click="submit">
-                      <span>GỬI</span>
+                    <button
+                      name="submit"
+                      class="site-button"
+                      :disabled="submitting"
+                      @click="submit"
+                    >
+                      <span v-show="!submitting">GỬI</span>
+                      <span v-show="submitting" class="loader"></span>
                     </button>
                   </div>
                 </div>
@@ -199,7 +182,12 @@
 </template>
 
 <script>
-const contact = {
+import { mapGetters } from 'vuex'
+import { CONTACT } from '@/store'
+import { CommonMixin } from '@/shared/mixins/CommonMixin'
+import Socials from '@/components/shared/socials/index'
+import { SeoMixin } from '@/shared/mixins/SeoMixin'
+const contactForm = {
   name: '',
   email: '',
   phone_number: '',
@@ -209,22 +197,39 @@ const contact = {
 
 export default {
   name: 'Contact',
+  components: { Socials },
+  mixins: [CommonMixin, SeoMixin],
   data: () => ({
-    contact: { ...contact },
+    contactForm: { ...contactForm },
+    submitting: false,
+    responsed: false,
+    errorMessage: '',
   }),
+  computed: {
+    ...mapGetters({
+      contact: CONTACT,
+    }),
+  },
   methods: {
     async submit() {
       if (!this.isValidForm()) return
+      this.submitting = true
       try {
-        await this.$repositories.contactMessages.create(this.contact)
-        this.contact = { ...contact }
-      } catch (e) {}
+        await this.$repositories.contactMessages.create(this.contactForm)
+        this.contactForm = { ...contactForm }
+        this.errorMessage = ''
+      } catch (e) {
+        this.errorMessage = e?.response?.data?.message
+      } finally {
+        this.submitting = false
+        this.responsed = true
+      }
     },
     isValidForm() {
       if (
-        !this.contact.phone_number ||
-        !this.contact.subject ||
-        !this.contact.message
+        !this.contactForm.phone_number ||
+        !this.contactForm.subject ||
+        !this.contactForm.message
       )
         return false
       return true

@@ -252,6 +252,7 @@
         </div>
         <div class="section-content">
           <VueSlickCarousel
+            v-if="sayPeoples.length"
             v-bind="
               vueSlickMultipleSlideSetting(false, false, true, 2, 2, 1, 1)
             "

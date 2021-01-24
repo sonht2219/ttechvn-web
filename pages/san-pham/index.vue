@@ -90,6 +90,7 @@ import PaginationCustom from '@/components/shared/paginationcustom/index'
 import { SET_META } from '@/store/product'
 import SearchBox from '@/components/shared/searchbox/index'
 import Tags from '@/components/shared/tags/index'
+import { SeoMixin } from '@/shared/mixins/SeoMixin'
 
 export default {
   name: 'ProductList',
@@ -103,82 +104,20 @@ export default {
     InnerBanner,
     ProductItem,
   },
-  mixins: [CommonMixin],
+  mixins: [CommonMixin, SeoMixin],
   async fetch() {
-    await this.loadProduct({
-      ...this.params,
-      category: this.slug,
-    })
+    try {
+      await this.loadProduct({
+        ...this.params,
+        category: this.slug,
+      })
+    } catch (e) {
+      this.throwError('error')
+    }
   },
   data: () => ({
     page: 1,
   }),
-  head() {
-    return {
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.title,
-        },
-        {
-          hid: 'keywords',
-          name: 'keywords',
-          content: `${this.slug}, t-tech`,
-        },
-        {
-          hid: 'og:title',
-          property: 'og:title',
-          content: `${this.title} - Công ty TNHH TTECH`,
-        },
-        {
-          hid: 'og:type',
-          property: 'og:type',
-          content: `website`,
-        },
-        {
-          hid: 'og:url',
-          property: 'og:url',
-          content: `${this.url}`,
-        },
-        {
-          hid: 'og:image',
-          property: 'og:image',
-          content: `${this.url}`,
-        },
-        {
-          hid: 'og:site_name',
-          property: 'og:site_name',
-          content: `Công ty TNHH TTECH`,
-        },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: `Công ty TNHH TTECH`,
-        },
-        {
-          hid: 'twitter:card',
-          name: 'twitter:card',
-          content: `summary`,
-        },
-        {
-          hid: 'twitter:title',
-          name: 'twitter:title',
-          content: `${this.title} - Công ty TNHH TECH`,
-        },
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: `Công ty TNHH TTECH`,
-        },
-        {
-          hid: 'twitter:image',
-          name: 'twitter:image',
-          content: `image`,
-        },
-      ],
-    }
-  },
   computed: {
     ...mapState({
       productSlugs: (state) => state.product.slugs,
@@ -192,9 +131,6 @@ export default {
     }),
     title() {
       return this.slugToCategory(this.slug)?.name
-    },
-    url() {
-      return this.$route.fullPath
     },
     slug() {
       return this.$route.query.category
@@ -219,9 +155,7 @@ export default {
       setMeta: `product/${SET_META}`,
     }),
     async loadProduct(params) {
-      try {
-        await this.listProduct(params)
-      } catch (e) {}
+      await this.listProduct(params)
     },
     onchangePage(page) {
       this.loadProduct({ ...this.params, page })

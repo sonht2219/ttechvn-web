@@ -8,16 +8,36 @@
           <div class="dlab-topbar-right">
             <ul class="social-bx list-inline pull-right">
               <li>
-                <a href="javascript:void(0);" class="fa fa-facebook"></a>
+                <a
+                  :href="getProp(contact, 'facebook')"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="fa fa-facebook"
+                ></a>
               </li>
               <li>
-                <a href="javascript:void(0);" class="fa fa-twitter"></a>
+                <a
+                  :href="getProp(contact, 'twitter')"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="fa fa-twitter"
+                ></a>
               </li>
               <li>
-                <a href="javascript:void(0);" class="fa fa-linkedin"></a>
+                <a
+                  :href="getProp(contact, 'linkedin')"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="fa fa-linkedin"
+                ></a>
               </li>
               <li>
-                <a href="javascript:void(0);" class="fa fa-google-plus"></a>
+                <a
+                  :href="getProp(contact, 'google')"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="fa fa-google-plus"
+                ></a>
               </li>
             </ul>
           </div>
@@ -120,21 +140,23 @@
                   </template>
                 </ul>
               </li>
-              <template v-for="(category, i) in categoriesTypeArticle">
+              <template v-for="(itemMenu, i) in extraMenus">
                 <li
                   :key="i"
                   :class="{
-                    active: isMatchRoute(`/bai-viet?category=${category.slug}`),
+                    active: isMatchRoute(`/bai-viet?category=${itemMenu.path}`),
                   }"
                 >
-                  <nuxt-link :to="`bai-viet?category=${category.slug}`">{{
-                    category.name
+                  <nuxt-link
+                    v-if="itemMenu.isArticle"
+                    :to="`bai-viet?category=${itemMenu.path}`"
+                    >{{ itemMenu.title }}</nuxt-link
+                  >
+                  <nuxt-link v-else :to="itemMenu.path">{{
+                    itemMenu.title
                   }}</nuxt-link>
                 </li>
               </template>
-              <li :class="{ active: isMatchRoute('/lien-he') }">
-                <nuxt-link to="/lien-he">Liên hệ</nuxt-link>
-              </li>
             </ul>
           </div>
         </div>
@@ -148,6 +170,7 @@
 import { mapState, mapGetters, mapActions } from 'vuex'
 import { DeviceType, ResizeMixin } from '@/shared/mixins/ResizeMixin'
 import { CommonMixin } from '@/shared/mixins/CommonMixin'
+import { CONTACT, EXTRA_MENU_LINKS } from '@/store'
 
 export default {
   name: 'Header',
@@ -169,6 +192,8 @@ export default {
     ...mapGetters({
       categoriesTypeArticle: 'category/listTypeArticle',
       categoriesTypeProduct: 'category/listTypeProduct',
+      contact: CONTACT,
+      extraMenus: EXTRA_MENU_LINKS,
     }),
   },
   methods: {
