@@ -180,12 +180,14 @@
       <!-- Product details -->
     </div>
     <!-- contact area  END -->
-    <LightBox
-      ref="lightbox"
-      :media="media"
-      :show-caption="true"
-      :show-light-box="false"
-    />
+    <client-only>
+      <LightBox
+        ref="lightbox"
+        :media="media"
+        :show-caption="true"
+        :show-light-box="false"
+      />
+    </client-only>
   </div>
 </template>
 
@@ -196,7 +198,6 @@ import ProductItemLarge from '@/components/shared/productitemlg/index'
 import { mapActions, mapState } from 'vuex'
 import ProductServiceSmall from '@/components/shared/productservicesmall/index'
 import { SeoMixin } from '@/shared/mixins/SeoMixin'
-import LightBox from 'vue-image-lightbox'
 
 export default {
   name: 'ProductDetail',
@@ -204,7 +205,6 @@ export default {
     ProductServiceSmall,
     ProductItemLarge,
     InnerBanner,
-    LightBox,
   },
   mixins: [CommonMixin, SeoMixin],
   async fetch() {
