@@ -1,41 +1,18 @@
 <template>
-  <ul class="dlab-social-icon dez-border" :class="ulClazzBySize">
-    <li>
-      <a
-        :href="getProp(contact, 'facebook')"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="fa fa-facebook"
-        :class="liClazzBySize"
-      ></a>
-    </li>
-    <li>
-      <a
-        :href="getProp(contact, 'twitter')"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="fa fa-twitter"
-        :class="liClazzBySize"
-      ></a>
-    </li>
-    <li>
-      <a
-        :href="getProp(contact, 'linkedin')"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="fa fa-linkedin"
-        :class="liClazzBySize"
-      ></a>
-    </li>
-    <li>
-      <a
-        :href="getProp(contact, 'google')"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="fa fa-google-plus"
-        :class="liClazzBySize"
-      ></a>
-    </li>
+  <ul class="list-inline" :class="bindClazz">
+    <slot name="li"></slot>
+    <template v-for="(social, i) in socials">
+      <li :key="i">
+        <a
+          :href="getProp(social, 'url')"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img v-if="icon === 'iconFFF'" :src="social.iconFFF" atl="icon" />
+          <img v-else :src="social.iconRRR" atl="icon" />
+        </a>
+      </li>
+    </template>
   </ul>
 </template>
 
@@ -47,9 +24,13 @@ export default {
   name: 'Socials',
   mixins: [CommonMixin],
   props: {
-    size: {
+    clazz: {
+      type: Array,
+      default: () => [],
+    },
+    icon: {
       type: String,
-      default: () => 'default',
+      default: () => 'iconFFF',
     },
   },
   computed: {
@@ -61,6 +42,12 @@ export default {
     },
     liClazzBySize() {
       return this.size === 'default' ? '' : 'bg-primary'
+    },
+    socials() {
+      return this.contact?.socials
+    },
+    bindClazz() {
+      return this.clazz.join(' ')
     },
   },
 }

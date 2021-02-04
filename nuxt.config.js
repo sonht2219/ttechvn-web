@@ -8,7 +8,6 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
     link: [
-      { rel: 'icon', type: 'image/png', href: '/favicon.ico' },
       { rel: 'stylesheet', href: '/css/style.css' },
       { rel: 'stylesheet', href: '/css/templete.css' },
       { rel: 'stylesheet', href: '/css/skin-1.css' },
@@ -29,6 +28,7 @@ export default {
   css: [
     'vue-slick-carousel/dist/vue-slick-carousel.css',
     'vue-slick-carousel/dist/vue-slick-carousel-theme.css',
+    'vue-image-lightbox/dist/vue-image-lightbox.min.css',
     '@/assets/css/vue-slick-carousel-custom.css',
     '@/assets/css/style-custom.css',
   ],

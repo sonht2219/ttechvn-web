@@ -7,16 +7,24 @@
           class="rev_slider_wrapper fullscreen-container"
         >
           <div id="rev_slider_1014_1" class="rev_slider fullscreenbanner">
-            <VueSlickCarousel v-if="banners.length" class="slick-main">
+            <VueSlickCarousel
+              v-if="banners.length"
+              class="slick-main"
+              v-bind="vueSlickMultipleSlideSetting(false, true, true, 1, 1, 1)"
+            >
               <template v-for="(banner, i) in banners">
-                <div :key="i">
-                  <!-- MAIN IMAGE -->
+                <a
+                  :key="i"
+                  :href="getProp(banner, 'navigate_to')"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img
                     :src="getProp(banner, 'image_url')"
                     :alt="getProp(banner, 'title')"
                     class="slick-img"
                   />
-                </div>
+                </a>
               </template>
             </VueSlickCarousel>
             <div

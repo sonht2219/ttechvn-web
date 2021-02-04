@@ -8,7 +8,7 @@
       <!-- Product details -->
       <div class="container woo-entry">
         <div class="row m-b30">
-          <div class="col-lg-5 col-md-5">
+          <div class="col-lg-7 col-md-7">
             <div class="product-gallery on-show-slider">
               <VueSlickCarousel
                 v-if="getProp(product, 'image_urls', []).length"
@@ -42,10 +42,8 @@
                             <div class="overlay-icon overlay-icon-custom">
                               <a
                                 class="mfp-link"
-                                :title="getProp(product, 'name')"
-                                :href="img"
-                                target="_blank"
-                                rel="noopener"
+                                href="javascript:void(0)"
+                                @click="openLightBox(i)"
                               >
                                 <i class="ti-fullscreen"></i>
                               </a>
@@ -87,7 +85,7 @@
               </VueSlickCarousel>
             </div>
           </div>
-          <div class="col-lg-7 col-md-7">
+          <div class="col-lg-5 col-md-5">
             <div class="sticky-top">
               <form method="post" class="cart">
                 <div class="dlab-post-title">
@@ -119,7 +117,7 @@
                 <div
                   v-for="(service, i) in productServices"
                   :key="i"
-                  class="col-lg-4 col-md-12 col-sm-12 m-b10"
+                  class="col-lg-12 col-md-12 col-sm-12 m-b10"
                 >
                   <product-service-small v-bind="service" />
                 </div>
@@ -182,6 +180,12 @@
       <!-- Product details -->
     </div>
     <!-- contact area  END -->
+    <LightBox
+      ref="lightbox"
+      :media="media"
+      :show-caption="true"
+      :show-light-box="false"
+    />
   </div>
 </template>
 
@@ -192,6 +196,7 @@ import ProductItemLarge from '@/components/shared/productitemlg/index'
 import { mapActions, mapState } from 'vuex'
 import ProductServiceSmall from '@/components/shared/productservicesmall/index'
 import { SeoMixin } from '@/shared/mixins/SeoMixin'
+import LightBox from 'vue-image-lightbox'
 
 export default {
   name: 'ProductDetail',
@@ -199,6 +204,7 @@ export default {
     ProductServiceSmall,
     ProductItemLarge,
     InnerBanner,
+    LightBox,
   },
   mixins: [CommonMixin, SeoMixin],
   async fetch() {
@@ -232,6 +238,15 @@ export default {
     slug() {
       return this.$route.params.slug
     },
+    media() {
+      return this.product?.image_urls?.map((url) => {
+        return {
+          thumb: url,
+          src: url,
+          srcset: url,
+        }
+      })
+    },
   },
   mounted() {
     this.show = 4
@@ -246,6 +261,10 @@ export default {
     },
     async loadListProduct(params) {
       await this.listProduct(params)
+    },
+    openLightBox(index) {
+      console.log(index)
+      this.$refs.lightbox.showImage(index)
     },
   },
 }

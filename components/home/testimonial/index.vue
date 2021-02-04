@@ -1,7 +1,7 @@
 <template>
   <div
     class="section-full overlay-black-middle bg-img-fix content-inner-1"
-    style="background-image: url(images/background/bg2-img.jpg)"
+    :style="{ 'background-image': `url(${imageBg})` }"
   >
     <div class="container">
       <div class="section-head text-white text-center">

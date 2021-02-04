@@ -49,7 +49,7 @@
                 </li>
               </ul>
               <div class="m-t20">
-                <socials size="large" />
+                <socials :icon="'iconRRR'" />
               </div>
             </div>
           </div>
@@ -209,6 +209,9 @@ export default {
     ...mapGetters({
       contact: CONTACT,
     }),
+    title() {
+      return 'Liên hệ'
+    },
   },
   methods: {
     async submit() {

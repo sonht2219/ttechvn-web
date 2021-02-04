@@ -36,7 +36,7 @@
           >
         </div>
         <div class="col-lg-5 about-img">
-          <img :src="`images/${getProp(aboutUsHome, 'images')}`" alt="" />
+          <img :src="getProp(aboutUsHome, 'images')" alt="" />
         </div>
       </div>
     </div>
