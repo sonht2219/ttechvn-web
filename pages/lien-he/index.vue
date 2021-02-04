@@ -209,6 +209,9 @@ export default {
     ...mapGetters({
       contact: CONTACT,
     }),
+    title() {
+      return 'Liên hệ'
+    },
   },
   methods: {
     async submit() {

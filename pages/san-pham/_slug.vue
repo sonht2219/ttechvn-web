@@ -42,10 +42,8 @@
                             <div class="overlay-icon overlay-icon-custom">
                               <a
                                 class="mfp-link"
-                                :title="getProp(product, 'name')"
-                                :href="img"
-                                target="_blank"
-                                rel="noopener"
+                                href="javascript:void(0)"
+                                @click="openLightBox(i)"
                               >
                                 <i class="ti-fullscreen"></i>
                               </a>
@@ -182,6 +180,12 @@
       <!-- Product details -->
     </div>
     <!-- contact area  END -->
+    <LightBox
+      ref="lightbox"
+      :media="media"
+      :show-caption="true"
+      :show-light-box="false"
+    />
   </div>
 </template>
 
@@ -192,6 +196,7 @@ import ProductItemLarge from '@/components/shared/productitemlg/index'
 import { mapActions, mapState } from 'vuex'
 import ProductServiceSmall from '@/components/shared/productservicesmall/index'
 import { SeoMixin } from '@/shared/mixins/SeoMixin'
+import LightBox from 'vue-image-lightbox'
 
 export default {
   name: 'ProductDetail',
@@ -199,6 +204,7 @@ export default {
     ProductServiceSmall,
     ProductItemLarge,
     InnerBanner,
+    LightBox,
   },
   mixins: [CommonMixin, SeoMixin],
   async fetch() {
@@ -232,6 +238,15 @@ export default {
     slug() {
       return this.$route.params.slug
     },
+    media() {
+      return this.product?.image_urls?.map((url) => {
+        return {
+          thumb: url,
+          src: url,
+          srcset: url,
+        }
+      })
+    },
   },
   mounted() {
     this.show = 4
@@ -246,6 +261,10 @@ export default {
     },
     async loadListProduct(params) {
       await this.listProduct(params)
+    },
+    openLightBox(index) {
+      console.log(index)
+      this.$refs.lightbox.showImage(index)
     },
   },
 }

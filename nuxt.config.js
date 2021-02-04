@@ -28,6 +28,7 @@ export default {
   css: [
     'vue-slick-carousel/dist/vue-slick-carousel.css',
     'vue-slick-carousel/dist/vue-slick-carousel-theme.css',
+    'vue-image-lightbox/dist/vue-image-lightbox.min.css',
     '@/assets/css/vue-slick-carousel-custom.css',
     '@/assets/css/style-custom.css',
   ],
