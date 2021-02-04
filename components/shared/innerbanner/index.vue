@@ -1,7 +1,7 @@
 <template>
   <div
     class="dlab-bnr-inr overlay-black-middle"
-    style="background-image: url(/images/background/bg4-img.jpg)"
+    :style="{ 'background-image': `url(${imageBg})` }"
   >
     <div class="container">
       <div class="dlab-bnr-inr-entry">
@@ -12,8 +12,11 @@
 </template>
 
 <script>
+import { CommonMixin } from '@/shared/mixins/CommonMixin'
+
 export default {
   name: 'InnerBanner',
+  mixins: [CommonMixin],
   props: {
     title: {
       type: String,

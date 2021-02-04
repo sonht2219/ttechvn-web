@@ -49,7 +49,7 @@
                 </li>
               </ul>
               <div class="m-t20">
-                <socials size="large" />
+                <socials :icon="'iconRRR'" />
               </div>
             </div>
           </div>

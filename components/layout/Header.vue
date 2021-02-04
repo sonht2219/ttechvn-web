@@ -6,46 +6,16 @@
         <div class="row d-flex justify-content-between">
           <div class="dlab-topbar-left"></div>
           <div class="dlab-topbar-right">
-            <ul class="social-bx list-inline pull-right">
-              <li>
-                <i class="fa fa-phone text-primary"></i>
-                <strong style="margin-right: 40px">
-                  Hotline: {{ getProp(contact, 'phone_number') }}
-                </strong>
-              </li>
-              <li>
-                <a
-                  :href="getProp(contact, 'facebook')"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="fa fa-facebook"
-                ></a>
-              </li>
-              <li>
-                <a
-                  :href="getProp(contact, 'twitter')"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="fa fa-twitter"
-                ></a>
-              </li>
-              <li>
-                <a
-                  :href="getProp(contact, 'linkedin')"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="fa fa-linkedin"
-                ></a>
-              </li>
-              <li>
-                <a
-                  :href="getProp(contact, 'google')"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="fa fa-google-plus"
-                ></a>
-              </li>
-            </ul>
+            <socials :clazz="['social-bx', 'pull-right']">
+              <template #li>
+                <li>
+                  <i class="fa fa-phone text-primary"></i>
+                  <strong style="margin-right: 25px">
+                    Hotline: {{ getProp(contact, 'phone_number') }}
+                  </strong>
+                </li>
+              </template>
+            </socials>
           </div>
         </div>
       </div>
@@ -58,11 +28,7 @@
           <!-- website logo -->
           <div class="logo-header mostion">
             <nuxt-link to="/"
-              ><img
-                src="@/assets/images/logo.png"
-                width="200"
-                height="95"
-                alt=""
+              ><img :src="logo" width="200" height="95" alt=""
             /></nuxt-link>
           </div>
           <!-- nav toggle button -->
@@ -86,23 +52,28 @@
                 id="quik-search-btn"
                 type="button"
                 class="site-button bg-primary-dark"
+                @click="showSearch = true"
               >
                 <i class="fa fa-search"></i>
               </button>
             </div>
           </div>
           <!-- Quik search -->
-          <div class="dlab-quik-search bg-primary">
-            <form action="#">
-              <input
-                name="search"
-                value=""
-                type="text"
-                class="form-control"
-                placeholder="Type to search"
-              />
-              <span id="quik-search-remove"><i class="fa fa-remove"></i></span>
-            </form>
+          <div
+            class="dlab-quik-search bg-primary"
+            :class="{ full: showSearch }"
+          >
+            <input
+              v-model="search"
+              name="search"
+              type="text"
+              class="form-control"
+              placeholder="Gõ để tìm kiếm sản phẩm"
+              @keyup.enter="searchProduct"
+            />
+            <span id="quik-search-remove" @click="showSearch = false"
+              ><i class="fa fa-remove"></i
+            ></span>
           </div>
           <!-- main nav -->
           <div
@@ -138,7 +109,10 @@
                     <li :key="i">
                       <nuxt-link :to="`/san-pham?category=${category.slug}`"
                         >{{ getProp(category, 'name') }}
-                        <i class="fa fa-angle-right"></i
+                        <i
+                          v-if="getProp(category, 'children.length')"
+                          class="fa fa-angle-right"
+                        ></i
                       ></nuxt-link>
                       <ul v-if="category.children" class="sub-menu">
                         <template v-for="(child, j) in category.children">
@@ -185,9 +159,11 @@ import { mapState, mapGetters, mapActions } from 'vuex'
 import { DeviceType, ResizeMixin } from '@/shared/mixins/ResizeMixin'
 import { CommonMixin } from '@/shared/mixins/CommonMixin'
 import { CONTACT, EXTRA_MENU_LINKS } from '@/store'
+import Socials from '@/components/shared/socials/index'
 
 export default {
   name: 'Header',
+  components: { Socials },
   mixins: [ResizeMixin, CommonMixin],
   async fetch() {
     try {
@@ -199,6 +175,8 @@ export default {
   data() {
     return {
       deviceType: DeviceType,
+      showSearch: false,
+      search: '',
     }
   },
   computed: {
@@ -214,6 +192,9 @@ export default {
     ...mapActions({
       listCategories: 'category/loadCategories',
     }),
+    searchProduct() {
+      this.$router.push({ path: `/san-pham?search=${this.search}` })
+    },
   },
 }
 </script>

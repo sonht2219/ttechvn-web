@@ -8,7 +8,7 @@
       <!-- Product details -->
       <div class="container woo-entry">
         <div class="row m-b30">
-          <div class="col-lg-5 col-md-5">
+          <div class="col-lg-7 col-md-7">
             <div class="product-gallery on-show-slider">
               <VueSlickCarousel
                 v-if="getProp(product, 'image_urls', []).length"
@@ -87,7 +87,7 @@
               </VueSlickCarousel>
             </div>
           </div>
-          <div class="col-lg-7 col-md-7">
+          <div class="col-lg-5 col-md-5">
             <div class="sticky-top">
               <form method="post" class="cart">
                 <div class="dlab-post-title">
@@ -119,7 +119,7 @@
                 <div
                   v-for="(service, i) in productServices"
                   :key="i"
-                  class="col-lg-4 col-md-12 col-sm-12 m-b10"
+                  class="col-lg-12 col-md-12 col-sm-12 m-b10"
                 >
                   <product-service-small v-bind="service" />
                 </div>

@@ -115,6 +115,7 @@ export default {
       await this.loadProduct({
         ...this.params,
         category: this.slug,
+        search: this.search,
       })
     } catch (e) {
       this.throwError('error')
@@ -135,10 +136,13 @@ export default {
       listIdsCategory: 'category/listIdsChildrenTypeProduct',
     }),
     title() {
-      return this.slugToCategory(this.slug)?.name
+      return this.slugToCategory(this.slug)?.name || this.search || ''
     },
     slug() {
       return this.$route.query.category
+    },
+    search() {
+      return this.$route.query.search
     },
     pagination: {
       set(val) {

@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 .icon-content span {
-  font-size: 8px;
+  font-size: 12px;
 }
 .icon-bx-xs-small {
   margin-right: 10px !important;

@@ -1,6 +1,7 @@
 import get from 'lodash/get'
 import { flattenChildren } from '@/shared/helper/helper'
 import { CategoryType } from '@/shared/enums/type'
+import { LOGO } from '@/store'
 export const CommonMixin = {
   data: () => ({
     productServices: [
@@ -21,6 +22,14 @@ export const CommonMixin = {
       },
     ],
   }),
+  computed: {
+    logo() {
+      return this.$store.getters[LOGO]?.logo
+    },
+    imageBg() {
+      return this.$store.getters[LOGO]?.imageBg
+    },
+  },
   methods: {
     getProp: get,
     isMatchRoute(path) {

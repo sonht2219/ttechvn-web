@@ -1,8 +1,11 @@
+import { FAVICON } from '@/store'
+
 export const SeoMixin = {
   head() {
     return {
       title: this.title,
       meta: [
+        { rel: 'icon', type: 'image/png', href: this.favicon },
         {
           hid: 'description',
           name: 'description',
@@ -75,6 +78,9 @@ export const SeoMixin = {
     },
     domainApp() {
       return process.env.VUE_APP_DOMAIN
+    },
+    favicon() {
+      return this.$store.getters[FAVICON]
     },
   },
 }

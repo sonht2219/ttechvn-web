@@ -9000,6 +9000,10 @@ ol.commentlist li .star-rating {
     width: 0;
     z-index: 999;
     overflow: hidden;
+    transition: ease-out width 0.5s;
+}
+.dlab-quik-search.full {
+  width: 100%;
 }
 .dlab-quik-search form {
     width: 100%;
@@ -10410,27 +10414,34 @@ ol.commentlist li .star-rating {
 	background: linear-gradient(to bottom,  #ee3131 0%,#fe4141 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee3131', endColorstr='#fe4141',GradientType=0 ); /* IE6-9 */
 }
-.theme-btn:hover{
-	color:#fff;
-	padding: 0 20px;
+/*.theme-btn:hover{*/
+/*	color:#fff;*/
+/*	padding: 0 20px;*/
+/*}*/
+
+.theme-btn {
+  color:#fff;
+  padding: 0 20px;
 }
  .theme-btn span{
 	display: table-cell;
 	vertical-align: middle;
     font-size: 16px;
-    letter-spacing: -15px;
-    opacity: 0;
+    /*letter-spacing: -15px;*/
+    opacity: 1;
 	line-height: 50px;
 	transition:all 0.5s;
 	-webkit-transition:all 0.5s;
 	-moz-transition:all 0.5s;
 	text-transform:uppercase;
+   letter-spacing: 1px;
+   padding-left:10px;
 }
-.theme-btn:hover span{
-	opacity:1;
-	letter-spacing: 1px;
-	padding-left:10px;
-}
+/*.theme-btn:hover span{*/
+/*	opacity:1;*/
+/*	letter-spacing: 1px;*/
+/*	padding-left:10px;*/
+/*}*/
 .at-expanding-share-button[data-position="bottom-left"]{
 	bottom: 130px !important;
 }

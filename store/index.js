@@ -11,6 +11,8 @@ export const FAVICON = 'FAVICON'
 export const LOGO = 'LOGO'
 export const NOTIFY_EMAIL = 'NOTIFY_EMAIL'
 export const TESTIMONIAL = 'TESTIMONIAL'
+export const COMPANY_STATUS = 'COMPANY_STATUS'
+export const ABOUT_TWO = 'ABOUT_TWO'
 // end key config
 export const state = () => ({
   device: DeviceType.Desktop,
@@ -25,6 +27,8 @@ export const getters = {
   [LOGO]: (state) => state.systemConfigs[LOGO],
   [NOTIFY_EMAIL]: (state) => state.systemConfigs[NOTIFY_EMAIL],
   [TESTIMONIAL]: (state) => state.systemConfigs[TESTIMONIAL],
+  [COMPANY_STATUS]: (state) => state.systemConfigs[COMPANY_STATUS],
+  [ABOUT_TWO]: (state) => state.systemConfigs[ABOUT_TWO],
 }
 export const mutations = {
   [TOGGLE_DEVICE](state, device) {
