@@ -23,9 +23,6 @@
             <i class="fa fa-user"></i>By
             <a href="#">{{ getProp(article, 'created_by.name') }}</a>
           </li>
-          <li class="post-comment">
-            <i class="fa fa-comments-o"></i> <a href="javascript:void(0)">10</a>
-          </li>
         </ul>
       </div>
       <div class="dlab-post-text">
