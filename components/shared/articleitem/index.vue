@@ -23,10 +23,6 @@
               <i class="ti-calendar"></i
               ><strong>{{ getProp(article, 'createdAt') }}</strong>
             </li>
-            <li class="post-author">
-              <i class="fa fa-user"></i>By
-              <a href="javascript:;">{{ getProp(article, 'createdBy') }}</a>
-            </li>
           </ul>
         </div>
         <div class="dlab-post-text">

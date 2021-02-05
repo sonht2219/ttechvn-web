@@ -18,15 +18,8 @@
           >
         </h6>
       </div>
-      <div class="dlab-post-meta">
-        <ul>
-          <li class="post-author">
-            By
-            <a href="javascript:void(0)">{{
-              getProp(article, 'created_by.name')
-            }}</a>
-          </li>
-        </ul>
+      <div class="dlab-post-text">
+        <p style="font-size: 11px">{{ getProp(article, 'description') }}</p>
       </div>
     </div>
   </div>

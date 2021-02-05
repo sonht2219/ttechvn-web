@@ -3,6 +3,7 @@ import { flattenChildren } from '@/shared/helper/helper'
 import { CategoryType } from '@/shared/enums/type'
 import { LOGO } from '@/store'
 export const CommonMixin = {
+  scrollToTop: true,
   data: () => ({
     productServices: [
       {
