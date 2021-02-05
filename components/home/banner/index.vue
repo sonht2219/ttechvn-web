@@ -13,18 +13,19 @@
               v-bind="vueSlickMultipleSlideSetting(false, true, true, 1, 1, 1)"
             >
               <template v-for="(banner, i) in banners">
-                <a
-                  :key="i"
-                  :href="getProp(banner, 'navigate_to')"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    :src="getProp(banner, 'image_url')"
-                    :alt="getProp(banner, 'title')"
-                    class="slick-img"
-                  />
-                </a>
+                <div :key="i">
+                  <a
+                    :href="getProp(banner, 'navigate_to')"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      :src="getProp(banner, 'image_url')"
+                      :alt="getProp(banner, 'title')"
+                      class="slick-img"
+                    />
+                  </a>
+                </div>
               </template>
             </VueSlickCarousel>
             <div

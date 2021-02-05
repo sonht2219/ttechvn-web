@@ -4,7 +4,7 @@
       <div class="testimonial-pic">
         <img
           :src="getProp(sayPeople, 'image')"
-          style="width: 100%; height: 100%"
+          style="width: 100%; height: 100%; object-fit: cover"
           alt=""
         />
       </div>
