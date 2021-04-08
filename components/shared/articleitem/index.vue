@@ -4,7 +4,7 @@
       class="blog-post blog-post-custom blog latest-blog-1 date-style-3 skew-date"
     >
       <div class="dlab-post-media dlab-img-effect zoom-slow">
-        <a href="javascript:;"
+        <a href="javascript:;" @click="detail(getProp(article, 'slug'))"
           ><img
             style="height: 300px"
             :src="getProp(article, 'thumbnail_url')"
@@ -14,7 +14,7 @@
       <div class="dlab-post-info p-t20">
         <div class="dlab-post-title">
           <h3 class="post-title">
-            <a href="javascript:;">{{ getProp(article, 'name') }}</a>
+            <a href="javascript:;" @click="detail(getProp(article, 'slug'))">{{ getProp(article, 'name') }}</a>
           </h3>
         </div>
         <div class="dlab-post-meta">
@@ -50,6 +50,11 @@ export default {
   computed: {
     article() {
       return this.$store.state.article.data[this.slug]
+    },
+  },
+  methods: {
+    detail(slug) {
+      this.$router.push({ name: 'bai-viet-slug', params: { slug } })
     },
   },
 }
